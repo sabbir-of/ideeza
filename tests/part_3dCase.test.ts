@@ -3,21 +3,24 @@ import test, { expect } from "@fixtures/basePages"
 import ENV from "@utils/env";
 
 test.beforeEach(async ({ page, wallet }) => {
-        // await page.goto("https://frontdev.ideeza.com/")
-        // await page.waitForLoadState("networkidle")
+        await page.goto(ENV.BASE_URL)
+        await page.waitForLoadState("networkidle")
         // await wallet.createAccount()
-
+        // await wallet.deleteAccount(2)
+        // await wallet.deleteNetwork("Polygon Testnet")
+        // await wallet.switchNetwork("Polygon Testnet")
+        await wallet.importPK(ENV.TOKEN)
 
 });
 
 test.only('ID-Parts-3DCase-001 | User |  Validate User Can Successfully Part Wit 3D Case', async ({ page, loginPage, wallet, newProjectPage }) => {
 
-        await page.goto(ENV.BASE_URL, { timeout: 1200000, waitUntil: "networkidle" })
+        // await page.goto(ENV.BASE_URL, { timeout: 1200000, waitUntil: "networkidle" })
 
-        await wallet.switchNetwork("Polygon Testnet")
-        await wallet.importPK(ENV.TOKEN)
+        // await wallet.switchNetwork("Polygon Testnet")
+        // await wallet.importPK(ENV.TOKEN)
         // await wallet.createAccount()
-
+        await page.waitForLoadState("networkidle")
         // await wallet.importPK(data.token)
         await loginPage.clickOnCookiesCheckBox()
         await loginPage.clickOnApproveBtn()
@@ -69,6 +72,7 @@ test.only('ID-Parts-3DCase-001 | User |  Validate User Can Successfully Part Wit
 
         //click on the next step button
         await newProjectPage.clickOnNextStepBtn()
+        await page.waitForTimeout(5000)
         //Choose Block Chain Mint
         await newProjectPage.clickToChooseBlockChainMint("Mumbai Testnet (Polygon)")
         //Click on Choose Collection section

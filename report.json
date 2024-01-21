@@ -76,25 +76,25 @@
                 {
                   "workerIndex": 0,
                   "status": "failed",
-                  "duration": 255166,
+                  "duration": 181223,
                   "error": {
-                    "message": "TimeoutError: browserContext.waitForEvent: Timeout 60000ms exceeded while waiting for event \"page\"",
-                    "stack": "TimeoutError: browserContext.waitForEvent: Timeout 60000ms exceeded while waiting for event \"page\"\n    at performPopupAction (D:\\2024\\Ideeza\\ideeza\\node_modules\\@tenkeylabs\\dappwright\\src\\wallets\\metamask\\actions\\util.ts:4:38)\n    at t.approve (D:\\2024\\Ideeza\\ideeza\\node_modules\\@tenkeylabs\\dappwright\\src\\wallets\\metamask\\actions\\approve.ts:7:9)\n    at D:\\2024\\Ideeza\\ideeza\\tests\\part_3dCase.test.ts:95:22",
+                    "message": "Error: browserContext.waitForEvent: Target page, context or browser has been closed",
+                    "stack": "Error: browserContext.waitForEvent: Target page, context or browser has been closed\n    at performPopupAction (D:\\2024\\Ideeza\\ideeza\\node_modules\\@tenkeylabs\\dappwright\\src\\wallets\\metamask\\actions\\util.ts:4:38)\n    at t.approve (D:\\2024\\Ideeza\\ideeza\\node_modules\\@tenkeylabs\\dappwright\\src\\wallets\\metamask\\actions\\approve.ts:7:9)\n    at D:\\2024\\Ideeza\\ideeza\\tests\\part_3dCase.test.ts:98:22",
                     "location": {
                       "file": "D:\\2024\\Ideeza\\ideeza\\tests\\part_3dCase.test.ts",
                       "column": 22,
-                      "line": 95
+                      "line": 98
                     },
-                    "snippet": "\u001b[0m \u001b[90m 93 |\u001b[39m         \u001b[36mawait\u001b[39m newProjectPage\u001b[33m.\u001b[39mclickOnMetaMaskBtn()\u001b[0m\n\u001b[0m \u001b[90m 94 |\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 95 |\u001b[39m         \u001b[36mawait\u001b[39m wallet\u001b[33m.\u001b[39mapprove()\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 96 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 97 |\u001b[39m         \u001b[36mawait\u001b[39m newProjectPage\u001b[33m.\u001b[39mclickOnContinueButton()\u001b[0m\n\u001b[0m \u001b[90m 98 |\u001b[39m         \u001b[90m// await page.waitForLoadState(\"load\")\u001b[39m\u001b[0m"
+                    "snippet": "\u001b[0m \u001b[90m  96 |\u001b[39m         \u001b[36mawait\u001b[39m newProjectPage\u001b[33m.\u001b[39mclickOnMetaMaskBtn()\u001b[0m\n\u001b[0m \u001b[90m  97 |\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  98 |\u001b[39m         \u001b[36mawait\u001b[39m wallet\u001b[33m.\u001b[39mapprove()\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  99 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 100 |\u001b[39m         \u001b[36mawait\u001b[39m newProjectPage\u001b[33m.\u001b[39mclickOnContinueButton()\u001b[0m\n\u001b[0m \u001b[90m 101 |\u001b[39m         \u001b[90m// await page.waitForLoadState(\"load\")\u001b[39m\u001b[0m"
                   },
                   "errors": [
                     {
                       "location": {
                         "file": "D:\\2024\\Ideeza\\ideeza\\tests\\part_3dCase.test.ts",
                         "column": 22,
-                        "line": 95
+                        "line": 98
                       },
-                      "message": "TimeoutError: browserContext.waitForEvent: Timeout 60000ms exceeded while waiting for event \"page\"\n\n\u001b[0m \u001b[90m 93 |\u001b[39m         \u001b[36mawait\u001b[39m newProjectPage\u001b[33m.\u001b[39mclickOnMetaMaskBtn()\u001b[0m\n\u001b[0m \u001b[90m 94 |\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 95 |\u001b[39m         \u001b[36mawait\u001b[39m wallet\u001b[33m.\u001b[39mapprove()\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 96 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 97 |\u001b[39m         \u001b[36mawait\u001b[39m newProjectPage\u001b[33m.\u001b[39mclickOnContinueButton()\u001b[0m\n\u001b[0m \u001b[90m 98 |\u001b[39m         \u001b[90m// await page.waitForLoadState(\"load\")\u001b[39m\u001b[0m\n\n\u001b[2m    at performPopupAction (D:\\2024\\Ideeza\\ideeza\\node_modules\\@tenkeylabs\\dappwright\\src\\wallets\\metamask\\actions\\util.ts:4:38)\u001b[22m\n\u001b[2m    at t.approve (D:\\2024\\Ideeza\\ideeza\\node_modules\\@tenkeylabs\\dappwright\\src\\wallets\\metamask\\actions\\approve.ts:7:9)\u001b[22m\n\u001b[2m    at D:\\2024\\Ideeza\\ideeza\\tests\\part_3dCase.test.ts:95:22\u001b[22m"
+                      "message": "Error: browserContext.waitForEvent: Target page, context or browser has been closed\n\n\u001b[0m \u001b[90m  96 |\u001b[39m         \u001b[36mawait\u001b[39m newProjectPage\u001b[33m.\u001b[39mclickOnMetaMaskBtn()\u001b[0m\n\u001b[0m \u001b[90m  97 |\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  98 |\u001b[39m         \u001b[36mawait\u001b[39m wallet\u001b[33m.\u001b[39mapprove()\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  99 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 100 |\u001b[39m         \u001b[36mawait\u001b[39m newProjectPage\u001b[33m.\u001b[39mclickOnContinueButton()\u001b[0m\n\u001b[0m \u001b[90m 101 |\u001b[39m         \u001b[90m// await page.waitForLoadState(\"load\")\u001b[39m\u001b[0m\n\n\u001b[2m    at performPopupAction (D:\\2024\\Ideeza\\ideeza\\node_modules\\@tenkeylabs\\dappwright\\src\\wallets\\metamask\\actions\\util.ts:4:38)\u001b[22m\n\u001b[2m    at t.approve (D:\\2024\\Ideeza\\ideeza\\node_modules\\@tenkeylabs\\dappwright\\src\\wallets\\metamask\\actions\\approve.ts:7:9)\u001b[22m\n\u001b[2m    at D:\\2024\\Ideeza\\ideeza\\tests\\part_3dCase.test.ts:98:22\u001b[22m"
                     }
                   ],
                   "stdout": [
@@ -110,12 +110,18 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-01-21T21:10:59.771Z",
-                  "attachments": [],
+                  "startTime": "2024-01-21T22:28:51.480Z",
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\2024\\Ideeza\\ideeza\\test-results\\part_3dCase-ID-Parts-3DCase-001-User-Validate-User-Can-Successfully-Part-Wit-3D-Case\\trace.zip"
+                    }
+                  ],
                   "errorLocation": {
                     "file": "D:\\2024\\Ideeza\\ideeza\\tests\\part_3dCase.test.ts",
                     "column": 22,
-                    "line": 95
+                    "line": 98
                   }
                 }
               ],
@@ -124,7 +130,7 @@
           ],
           "id": "0c6d0b95a814db96e568-c209395570d9d126f2a4",
           "file": "part_3dCase.test.ts",
-          "line": 13,
+          "line": 16,
           "column": 6
         }
       ]
@@ -132,8 +138,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-01-21T21:10:58.679Z",
-    "duration": 265200.602,
+    "startTime": "2024-01-21T22:28:50.609Z",
+    "duration": 182638.142,
     "expected": 0,
     "skipped": 0,
     "unexpected": 1,
