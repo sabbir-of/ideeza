@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "lib": ["es2015", "ES6", "dom", "es2018.promise"],
+    "target": "ESNext",
+    "strictFunctionTypes": false,
+    "strict": true,
+    "module": "commonjs",
+    "sourceMap": true,
+    "resolveJsonModule": false,
+    "types": ["node"],
+    "baseUrl": ".",
+    "paths": {
+      "@pages/*": ["pages/loginPage/*", "pages/quickStartPages/*"],
+      "@fixtures/*": ["fixtures/*"],
+      "@utils/*": ["utils/*"],
+      "@testData/*": [
+        "testData/*",
+        "testData/audios/*",
+        "testData/images/*",
+        "testData/videos*"
+      ],
+      "@tests/*": ["fixtures/*"],
+      "@base-function/*": ["base-function/*"]
+    }
+  }
+}
