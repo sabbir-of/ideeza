@@ -76,25 +76,25 @@
                 {
                   "workerIndex": 0,
                   "status": "failed",
-                  "duration": 181223,
+                  "duration": 185996,
                   "error": {
-                    "message": "Error: browserContext.waitForEvent: Target page, context or browser has been closed",
-                    "stack": "Error: browserContext.waitForEvent: Target page, context or browser has been closed\n    at performPopupAction (D:\\2024\\Ideeza\\ideeza\\node_modules\\@tenkeylabs\\dappwright\\src\\wallets\\metamask\\actions\\util.ts:4:38)\n    at t.approve (D:\\2024\\Ideeza\\ideeza\\node_modules\\@tenkeylabs\\dappwright\\src\\wallets\\metamask\\actions\\approve.ts:7:9)\n    at D:\\2024\\Ideeza\\ideeza\\tests\\part_3dCase.test.ts:98:22",
+                    "message": "Error: User Dashboard | Quick Start Button Is Not Visible | Could not find locator:\"TimeoutError: locator.click: Timeout 60000ms exceeded.\nCall log:\n  \u001b[2m- waiting for locator('//div[text()=\\'Quick Start\\']')\u001b[22m\n\"",
+                    "stack": "Error: User Dashboard | Quick Start Button Is Not Visible | Could not find locator:\"TimeoutError: locator.click: Timeout 60000ms exceeded.\nCall log:\n  \u001b[2m- waiting for locator('//div[text()=\\'Quick Start\\']')\u001b[22m\n\"\n    at newProjectPage.clickQuickStartBtn (D:\\2024\\Ideeza\\ideeza\\pages\\quickStartPages\\NewProject.page.ts:966:31)\n    at D:\\2024\\Ideeza\\ideeza\\tests\\part_3dCase.test.ts:33:9",
                     "location": {
-                      "file": "D:\\2024\\Ideeza\\ideeza\\tests\\part_3dCase.test.ts",
-                      "column": 22,
-                      "line": 98
+                      "file": "D:\\2024\\Ideeza\\ideeza\\pages\\quickStartPages\\NewProject.page.ts",
+                      "column": 31,
+                      "line": 966
                     },
-                    "snippet": "\u001b[0m \u001b[90m  96 |\u001b[39m         \u001b[36mawait\u001b[39m newProjectPage\u001b[33m.\u001b[39mclickOnMetaMaskBtn()\u001b[0m\n\u001b[0m \u001b[90m  97 |\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  98 |\u001b[39m         \u001b[36mawait\u001b[39m wallet\u001b[33m.\u001b[39mapprove()\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  99 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 100 |\u001b[39m         \u001b[36mawait\u001b[39m newProjectPage\u001b[33m.\u001b[39mclickOnContinueButton()\u001b[0m\n\u001b[0m \u001b[90m 101 |\u001b[39m         \u001b[90m// await page.waitForLoadState(\"load\")\u001b[39m\u001b[0m"
+                    "snippet": "\u001b[90m   at \u001b[39m..\\pages\\quickStartPages\\NewProject.page.ts:966\n\n\u001b[0m \u001b[90m 964 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 965 |\u001b[39m                 } \u001b[36mcatch\u001b[39m (error) {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 966 |\u001b[39m                         \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m`User Dashboard | Quick Start Button Is Not Visible | Could not find locator:\"${error}\"`\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 967 |\u001b[39m                 }\u001b[0m\n\u001b[0m \u001b[90m 968 |\u001b[39m         }\u001b[0m\n\u001b[0m \u001b[90m 969 |\u001b[39m\u001b[0m"
                   },
                   "errors": [
                     {
                       "location": {
-                        "file": "D:\\2024\\Ideeza\\ideeza\\tests\\part_3dCase.test.ts",
-                        "column": 22,
-                        "line": 98
+                        "file": "D:\\2024\\Ideeza\\ideeza\\pages\\quickStartPages\\NewProject.page.ts",
+                        "column": 31,
+                        "line": 966
                       },
-                      "message": "Error: browserContext.waitForEvent: Target page, context or browser has been closed\n\n\u001b[0m \u001b[90m  96 |\u001b[39m         \u001b[36mawait\u001b[39m newProjectPage\u001b[33m.\u001b[39mclickOnMetaMaskBtn()\u001b[0m\n\u001b[0m \u001b[90m  97 |\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  98 |\u001b[39m         \u001b[36mawait\u001b[39m wallet\u001b[33m.\u001b[39mapprove()\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  99 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 100 |\u001b[39m         \u001b[36mawait\u001b[39m newProjectPage\u001b[33m.\u001b[39mclickOnContinueButton()\u001b[0m\n\u001b[0m \u001b[90m 101 |\u001b[39m         \u001b[90m// await page.waitForLoadState(\"load\")\u001b[39m\u001b[0m\n\n\u001b[2m    at performPopupAction (D:\\2024\\Ideeza\\ideeza\\node_modules\\@tenkeylabs\\dappwright\\src\\wallets\\metamask\\actions\\util.ts:4:38)\u001b[22m\n\u001b[2m    at t.approve (D:\\2024\\Ideeza\\ideeza\\node_modules\\@tenkeylabs\\dappwright\\src\\wallets\\metamask\\actions\\approve.ts:7:9)\u001b[22m\n\u001b[2m    at D:\\2024\\Ideeza\\ideeza\\tests\\part_3dCase.test.ts:98:22\u001b[22m"
+                      "message": "Error: User Dashboard | Quick Start Button Is Not Visible | Could not find locator:\"TimeoutError: locator.click: Timeout 60000ms exceeded.\nCall log:\n  \u001b[2m- waiting for locator('//div[text()=\\'Quick Start\\']')\u001b[22m\n\"\n\n\u001b[90m   at \u001b[39m..\\pages\\quickStartPages\\NewProject.page.ts:966\n\n\u001b[0m \u001b[90m 964 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 965 |\u001b[39m                 } \u001b[36mcatch\u001b[39m (error) {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 966 |\u001b[39m                         \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m`User Dashboard | Quick Start Button Is Not Visible | Could not find locator:\"${error}\"`\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 967 |\u001b[39m                 }\u001b[0m\n\u001b[0m \u001b[90m 968 |\u001b[39m         }\u001b[0m\n\u001b[0m \u001b[90m 969 |\u001b[39m\u001b[0m\n\n\u001b[2m    at newProjectPage.clickQuickStartBtn (D:\\2024\\Ideeza\\ideeza\\pages\\quickStartPages\\NewProject.page.ts:966:31)\u001b[22m\n\u001b[2m    at D:\\2024\\Ideeza\\ideeza\\tests\\part_3dCase.test.ts:33:9\u001b[22m"
                     }
                   ],
                   "stdout": [
@@ -110,8 +110,23 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-01-21T22:28:51.480Z",
+                  "startTime": "2024-01-22T05:10:57.520Z",
                   "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\2024\\Ideeza\\ideeza\\test-results\\part_3dCase-ID-Parts-3DCase-001-User-Validate-User-Can-Successfully-Part-Wit-3D-Case\\test-failed-1.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\2024\\Ideeza\\ideeza\\test-results\\part_3dCase-ID-Parts-3DCase-001-User-Validate-User-Can-Successfully-Part-Wit-3D-Case\\test-failed-2.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\2024\\Ideeza\\ideeza\\test-results\\part_3dCase-ID-Parts-3DCase-001-User-Validate-User-Can-Successfully-Part-Wit-3D-Case\\test-failed-3.png"
+                    },
                     {
                       "name": "trace",
                       "contentType": "application/zip",
@@ -119,9 +134,9 @@
                     }
                   ],
                   "errorLocation": {
-                    "file": "D:\\2024\\Ideeza\\ideeza\\tests\\part_3dCase.test.ts",
-                    "column": 22,
-                    "line": 98
+                    "file": "D:\\2024\\Ideeza\\ideeza\\pages\\quickStartPages\\NewProject.page.ts",
+                    "column": 31,
+                    "line": 966
                   }
                 }
               ],
@@ -138,8 +153,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-01-21T22:28:50.609Z",
-    "duration": 182638.142,
+    "startTime": "2024-01-22T05:10:55.315Z",
+    "duration": 195154.592,
     "expected": 0,
     "skipped": 0,
     "unexpected": 1,

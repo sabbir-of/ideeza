@@ -1539,6 +1539,7 @@ export default class newProjectPage {
         async clickToChooseBlockChainMint(project: string) {
                 const ele = await this.page.locator(this.newProjectPageElements.blockChainMintChooseBtn)
                 try {
+                        await ele.click({ button: "left" })
                         await ele.selectOption(project)
                         await this.page.waitForTimeout(5000)
                         await this.page.waitForSelector(this.newProjectPageElements.collectionChooseBtn)
