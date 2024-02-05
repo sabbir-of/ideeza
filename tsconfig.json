@@ -2,11 +2,11 @@
   "compilerOptions": {
     "lib": ["es2015", "ES6", "dom", "es2018.promise"],
     "target": "ESNext",
-    "strictFunctionTypes": false,
+    "strictNullChecks": false,
     "strict": true,
     "module": "commonjs",
     "sourceMap": true,
-    "resolveJsonModule": false,
+    "resolveJsonModule": true,
     "types": ["node"],
     "baseUrl": ".",
     "paths": {

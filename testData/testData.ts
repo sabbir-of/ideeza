@@ -1,4 +1,4 @@
-// const axios = require('axios');
+const axios = require('axios');
 import { expect, Page } from "@playwright/test";
 
 export default class testData {
@@ -328,11 +328,8 @@ export default class testData {
         getProjectCollection() {
                 return "1"
         }
-        email() {
-                return "user@ideeza.com"
-        }
-        password() {
-                return "Nopass123"
+        getStepTWoTitleText() {
+                return "Project social Preview"
         }
 
 

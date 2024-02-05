@@ -4,8 +4,11 @@ import newProjectPage from "@pages/NewProject.page";
 import signUpPage from "@pages/SignUp.page";
 // import { test as baseTest } from "@playwright/test";
 import { BrowserContext, chromium } from "playwright";
-import { test as baseTest } from "../global-setup"
+// import { Page } from "tests/fixtures/chrome-extension"
+// import { test as baseTest }  from "../global-setup"
+import { test as baseTest } from "../fixtures"
 import { Page } from "@playwright/test";
+
 
 // import { test as baseTest }  from "tests/fixtures/chrome-extension"
 import functions from "@testData/helper";

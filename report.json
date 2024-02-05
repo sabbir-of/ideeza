@@ -1,17 +1,18 @@
 {
   "config": {
-    "configFile": "D:\\2024\\Ideeza\\ideeza\\playwright.config.ts",
-    "rootDir": "D:/2024/Ideeza/ideeza/tests",
+    "configFile": "D:\\Work Station\\Ideega\\cypress-tests\\playwright.config.ts",
+    "rootDir": "D:/Work Station/Ideega/cypress-tests",
     "forbidOnly": false,
     "fullyParallel": true,
-    "globalSetup": "D:\\2024\\Ideeza\\ideeza\\utils\\global-set.ts",
+    "globalSetup": null,
     "globalTeardown": null,
     "globalTimeout": 0,
     "grep": {},
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 1,
+      "totalTime": 4471.2789999991655
     },
     "preserveOutput": "always",
     "reporter": [
@@ -35,129 +36,108 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "D:/2024/Ideeza/ideeza/test-results",
+        "outputDir": "D:/Work Station/Ideega/cypress-tests/test-results",
         "repeatEach": 1,
         "retries": 0,
         "id": "",
         "name": "",
-        "testDir": "D:/2024/Ideeza/ideeza/tests",
+        "testDir": "D:/Work Station/Ideega/cypress-tests",
         "testIgnore": [],
         "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+          "ID00-ProjectSetup.test.ts",
+          "ID01-ProjectCreate_GWC.test.ts",
+          "ID02-ProjectCreate_Sell.test.ts",
+          "ID03-ProjectCreateForManufacture.test.ts",
+          "ID04-ProjectSendToManufacture.test.ts",
+          "ID05-ProjectAcceptByManufacture.test.ts",
+          "ID06-ProjectPaymentFromUserSide.test.ts",
+          "ID07-Part_3dCase.test.ts",
+          "ID08-Part_Electronics.test.ts",
+          "ID09-Part_Code.test.ts",
+          "ID10-Component_3dCase.test.ts",
+          "ID11-Component_Electronics.test.ts",
+          "ID12-Component_Code.test.ts",
+          "ID13-BuyProject.test.ts"
         ],
         "timeout": 300000
       }
     ],
     "shard": null,
     "updateSnapshots": "missing",
-    "version": "1.41.1",
+    "version": "1.36.2",
     "workers": 1,
     "webServer": null
   },
   "suites": [
     {
-      "title": "part_3dCase.test.ts",
-      "file": "part_3dCase.test.ts",
+      "title": "tests\\QuickStart\\ID00-ProjectSetup.test.ts",
+      "file": "tests/QuickStart/ID00-ProjectSetup.test.ts",
       "column": 0,
       "line": 0,
-      "specs": [
+      "specs": [],
+      "suites": [
         {
-          "title": "ID-Parts-3DCase-001 | User |  Validate User Can Successfully Part Wit 3D Case",
-          "ok": false,
-          "tags": [],
-          "tests": [
+          "title": "Ideeza Full Project Setup",
+          "file": "tests/QuickStart/ID00-ProjectSetup.test.ts",
+          "line": 8,
+          "column": 6,
+          "specs": [
             {
-              "timeout": 300000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
+              "title": "demo",
+              "ok": true,
+              "tags": [],
+              "tests": [
                 {
-                  "workerIndex": 0,
-                  "status": "failed",
-                  "duration": 185996,
-                  "error": {
-                    "message": "Error: User Dashboard | Quick Start Button Is Not Visible | Could not find locator:\"TimeoutError: locator.click: Timeout 60000ms exceeded.\nCall log:\n  \u001b[2m- waiting for locator('//div[text()=\\'Quick Start\\']')\u001b[22m\n\"",
-                    "stack": "Error: User Dashboard | Quick Start Button Is Not Visible | Could not find locator:\"TimeoutError: locator.click: Timeout 60000ms exceeded.\nCall log:\n  \u001b[2m- waiting for locator('//div[text()=\\'Quick Start\\']')\u001b[22m\n\"\n    at newProjectPage.clickQuickStartBtn (D:\\2024\\Ideeza\\ideeza\\pages\\quickStartPages\\NewProject.page.ts:966:31)\n    at D:\\2024\\Ideeza\\ideeza\\tests\\part_3dCase.test.ts:33:9",
-                    "location": {
-                      "file": "D:\\2024\\Ideeza\\ideeza\\pages\\quickStartPages\\NewProject.page.ts",
-                      "column": 31,
-                      "line": 966
-                    },
-                    "snippet": "\u001b[90m   at \u001b[39m..\\pages\\quickStartPages\\NewProject.page.ts:966\n\n\u001b[0m \u001b[90m 964 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 965 |\u001b[39m                 } \u001b[36mcatch\u001b[39m (error) {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 966 |\u001b[39m                         \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m`User Dashboard | Quick Start Button Is Not Visible | Could not find locator:\"${error}\"`\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 967 |\u001b[39m                 }\u001b[0m\n\u001b[0m \u001b[90m 968 |\u001b[39m         }\u001b[0m\n\u001b[0m \u001b[90m 969 |\u001b[39m\u001b[0m"
-                  },
-                  "errors": [
+                  "timeout": 300000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
                     {
-                      "location": {
-                        "file": "D:\\2024\\Ideeza\\ideeza\\pages\\quickStartPages\\NewProject.page.ts",
-                        "column": 31,
-                        "line": 966
-                      },
-                      "message": "Error: User Dashboard | Quick Start Button Is Not Visible | Could not find locator:\"TimeoutError: locator.click: Timeout 60000ms exceeded.\nCall log:\n  \u001b[2m- waiting for locator('//div[text()=\\'Quick Start\\']')\u001b[22m\n\"\n\n\u001b[90m   at \u001b[39m..\\pages\\quickStartPages\\NewProject.page.ts:966\n\n\u001b[0m \u001b[90m 964 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 965 |\u001b[39m                 } \u001b[36mcatch\u001b[39m (error) {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 966 |\u001b[39m                         \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m`User Dashboard | Quick Start Button Is Not Visible | Could not find locator:\"${error}\"`\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 967 |\u001b[39m                 }\u001b[0m\n\u001b[0m \u001b[90m 968 |\u001b[39m         }\u001b[0m\n\u001b[0m \u001b[90m 969 |\u001b[39m\u001b[0m\n\n\u001b[2m    at newProjectPage.clickQuickStartBtn (D:\\2024\\Ideeza\\ideeza\\pages\\quickStartPages\\NewProject.page.ts:966:31)\u001b[22m\n\u001b[2m    at D:\\2024\\Ideeza\\ideeza\\tests\\part_3dCase.test.ts:33:9\u001b[22m"
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 3361,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "\u001b[33m6\u001b[39m\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-02-05T14:05:56.547Z",
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Work Station\\Ideega\\cypress-tests\\test-results\\tests-QuickStart-ID00-ProjectSetup-Ideeza-Full-Project-Setup-demo\\test-finished-1.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Work Station\\Ideega\\cypress-tests\\test-results\\tests-QuickStart-ID00-ProjectSetup-Ideeza-Full-Project-Setup-demo\\test-finished-2.png"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Work Station\\Ideega\\cypress-tests\\test-results\\tests-QuickStart-ID00-ProjectSetup-Ideeza-Full-Project-Setup-demo\\trace.zip"
+                        }
+                      ]
                     }
                   ],
-                  "stdout": [
-                    {
-                      "text": "\n"
-                    },
-                    {
-                      "text": "Running tests on metamask version 11.3.0\n"
-                    },
-                    {
-                      "text": "\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2024-01-22T05:10:57.520Z",
-                  "attachments": [
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "D:\\2024\\Ideeza\\ideeza\\test-results\\part_3dCase-ID-Parts-3DCase-001-User-Validate-User-Can-Successfully-Part-Wit-3D-Case\\test-failed-1.png"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "D:\\2024\\Ideeza\\ideeza\\test-results\\part_3dCase-ID-Parts-3DCase-001-User-Validate-User-Can-Successfully-Part-Wit-3D-Case\\test-failed-2.png"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "D:\\2024\\Ideeza\\ideeza\\test-results\\part_3dCase-ID-Parts-3DCase-001-User-Validate-User-Can-Successfully-Part-Wit-3D-Case\\test-failed-3.png"
-                    },
-                    {
-                      "name": "trace",
-                      "contentType": "application/zip",
-                      "path": "D:\\2024\\Ideeza\\ideeza\\test-results\\part_3dCase-ID-Parts-3DCase-001-User-Validate-User-Can-Successfully-Part-Wit-3D-Case\\trace.zip"
-                    }
-                  ],
-                  "errorLocation": {
-                    "file": "D:\\2024\\Ideeza\\ideeza\\pages\\quickStartPages\\NewProject.page.ts",
-                    "column": 31,
-                    "line": 966
-                  }
+                  "status": "expected"
                 }
               ],
-              "status": "unexpected"
+              "id": "de70e15435b1f24eac6f-d4a3691ac3867d14739d",
+              "file": "tests/QuickStart/ID00-ProjectSetup.test.ts",
+              "line": 81,
+              "column": 14
             }
-          ],
-          "id": "0c6d0b95a814db96e568-c209395570d9d126f2a4",
-          "file": "part_3dCase.test.ts",
-          "line": 16,
-          "column": 6
+          ]
         }
       ]
     }
   ],
-  "errors": [],
-  "stats": {
-    "startTime": "2024-01-22T05:10:55.315Z",
-    "duration": 195154.592,
-    "expected": 0,
-    "skipped": 0,
-    "unexpected": 1,
-    "flaky": 0
-  }
+  "errors": []
 }

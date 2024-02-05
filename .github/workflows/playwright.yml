@@ -32,8 +32,8 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
-      - name: Deploy to GH pages
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
-        with:
-          branch: gh-pages
-          folder: ./playwright-report
+      # - name: Deploy to GH pages
+      #   uses: JamesIves/github-pages-deploy-action@v4.4.1
+      #   with:
+      #     branch: gh-pages
+      #     folder: ./playwright-report

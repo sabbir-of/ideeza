@@ -54,8 +54,9 @@ export default class newProjectPage {
 
                 coverSectionParts: "//div[text()='ALL 3D Models']",
                 qaElectronicsPartsBtn: "//div[text()='AD8497ARMZ']",
+                premiumPart: `//b[@title='Electronic Part']`,
                 qaTestCatagory: "//div[text()='QA Test']",
-                qaElectronicsPremiumPartsBtn: "//b[@title='dmeo part 11']",
+                qaElectronicsPremiumPartsBtn: "//b[@title='Electronic Part']",
                 qaElectronicsPartsSelectionBtn: "//b[@title='Test With Ligthing']",
                 searchResultForPartsAndComponets: "//div[text()='Atmega']",
                 atmegaPublicOption: "//span[text()='Public']",
@@ -1042,7 +1043,7 @@ export default class newProjectPage {
         }
 
         async clickAddPartsOrComponentsSearchIcon() {
-                const ele = await this.page.locator(this.newProjectPageElements.addPartsOrComponentSearchIcon).nth(0)
+                const ele = await this.page.locator(this.newProjectPageElements.addPartsOrComponentSearchIcon).nth(2)
                 try {
                         await ele.click({ button: 'left', delay: 100 })
                         await this.page.waitForTimeout(3000)
@@ -1052,7 +1053,7 @@ export default class newProjectPage {
                 }
         }
         async clickCodeSectionAddPartsOrComponentsSearchIcon() {
-                const ele = await this.page.locator(this.newProjectPageElements.addPartsOrComponentSearchIcon).nth(2)
+                const ele = await this.page.locator(this.newProjectPageElements.addPartsOrComponentSearchIcon).nth(3)
                 try {
                         await ele.click({ button: 'left', delay: 100 })
                 } catch (error) {
@@ -1159,14 +1160,24 @@ export default class newProjectPage {
                         throw new Error(`User Dashboard | Quick Start | Add New Project | Parts And Components Search Functionality Does not Work properly QA Electronics Parts Is Not Found | Could not find locator:"${error}"`)
                 }
         }
+        async clickOnPremiumPart() {
+                const ele = await this.page.locator(this.newProjectPageElements.premiumPart).nth(0)
+                try {
+                        await ele.click({ button: 'left', delay: 100 })
+                        await this.page.waitForTimeout(5000)
+
+                } catch (error) {
+                        throw new Error(`User Dashboard | Quick Start | Add New Project | Parts And Components Preimium Parts Is Not Found | Could not find locator:"${error}"`)
+                }
+        }
 
         async clickToSelectPrimiumParts() {
-                const ele = await this.page.locator(this.newProjectPageElements.qaElectronicsPremiumPartsBtn).first()
+                const ele = await this.page.locator(this.newProjectPageElements.qaElectronicsPremiumPartsBtn).nth(0)
 
                 try {
                         await ele.click({ force: true })
-                        await this.page.waitForTimeout(5000)
-                        await this.page.waitForSelector(this.newProjectPageElements.partsComponentUseBtn)
+                        // await this.page.waitForTimeout(5000)
+                        // await this.page.waitForSelector(this.newProjectPageElements.partsComponentUseBtn)
                 } catch (error) {
                         throw new Error(`User Dashboard | Quick Start | Add New Project | Parts And Components Search Functionality Does not Work properly QA Electronics Parts Is Not Found | Could not find locator:"${error}"`)
                 }
@@ -1539,7 +1550,6 @@ export default class newProjectPage {
         async clickToChooseBlockChainMint(project: string) {
                 const ele = await this.page.locator(this.newProjectPageElements.blockChainMintChooseBtn)
                 try {
-                        await ele.click({ button: "left" })
                         await ele.selectOption(project)
                         await this.page.waitForTimeout(5000)
                         await this.page.waitForSelector(this.newProjectPageElements.collectionChooseBtn)
@@ -1774,9 +1784,22 @@ export default class newProjectPage {
                 }
         }
 
+        async approveMetaMask() {
+
+                // const approveSpending = async (page: Page) => {
+                const popup = await this.page.context().waitForEvent("page");
+                await popup.getByRole("button", { name: "Next" }).click();
+                await popup.getByRole("button", { name: "Connect" }).click();
+
+                // await popup.getByRole("button", { name: "Approve" }).click();
+                // };
+
+        }
+
         async clickOnContinueButton() {
                 const ele = await this.page.locator(this.newProjectPageElements.contineuBtn)
                 try {
+                        await this.page.waitForTimeout(3000)
                         if (await ele.isVisible()) {
                                 await ele.click({ button: 'left', delay: 100 })
                                 await this.page.waitForTimeout(8000)

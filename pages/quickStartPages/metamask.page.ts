@@ -11,12 +11,12 @@ export default class metaMaskPage {
         // [x: string]: any;
         // private page: Page;
         // static buffer: void;
-        constructor(page: Page | Page) {
-                this.page = page;
-        }
-        // constructor(page: Page) {
+        // constructor(page: Page | Page) {
         //         this.page = page;
         // }
+        constructor(page: Page) {
+                this.page = page;
+        }
         private metaMaskPageElements = {
                 termsAgreeCheckBox: `[type="checkbox"]`,
                 creatNewWalletBtn: `[data-testid="onboarding-create-wallet"]`,
@@ -55,6 +55,17 @@ export default class metaMaskPage {
 
 
 
+        async approveMetaMask() {
+
+                // const approveSpending = async (page: Page) => {
+                const popup = await this.page.context().waitForEvent("page");
+                await popup.getByRole("button", { name: "Next" }).click();
+                await popup.getByRole("button", { name: "Connect" }).click();
+
+                // await popup.getByRole("button", { name: "Approve" }).click();
+                // };
+
+        }
         async metaMaskUnlockHelper() {
                 const ele = await this.page.locator(this.metaMaskPageElements.passwordInputField)
                 const unloackBtn = await this.page.locator(this.metaMaskPageElements.unloackBtn)
