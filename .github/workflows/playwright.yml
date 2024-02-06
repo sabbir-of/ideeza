@@ -33,8 +33,18 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
-      - name: Deploy to GH pages
-        uses: sabbir.of/github-pages-deploy-action@v4.4.1
+
+      - name: Setup Pages
+        if: always()
+        uses: actions/configure-pages@v2
+
+      - name: Upload artifact
+        if: always()
+        uses: actions/upload-pages-artifact@v1
         with:
-          branch: gh-pages
-          folder: ./playwright-report
+          path: playwright-report/
+
+      - name: Deploy to GitHub Pages
+        if: always()
+        id: deployment
+        uses: actions/deploy-pages@v1
