@@ -26,15 +26,6 @@ jobs:
       - name: Run Playwright tests
         run: npm run test:ProjectSetup
 
-      - name: Setup Pages
-        if: always()
-        uses: actions/configure-pages@v2
-
-      - name: Upload artifact
-        if: always()
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: playwright-report/
 
       - uses: actions/upload-artifact@v3
         if: always()
