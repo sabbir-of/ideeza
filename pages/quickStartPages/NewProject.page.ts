@@ -22,6 +22,7 @@ export default class newProjectPage {
                 newPartBtn: "//p[text()='New Part']",
                 threeDCaseBtn: "//p[text()='3D case']",
                 newProjectBtn: "//p[text()='New Project']",
+                projectCreateByYourselfBtn: `(//div[text()='Click here to design new project by yourself!'])[3]`,
                 typeIdeaInputField: `(//textarea[@placeholder='Start now – type your idea here...'])[2]`,
                 goBtn: "(//div[contains(@class,'absolute custom-top-icon-creat')])[2]",
                 getStartedBtn: "//div[text()='Get Started']",
@@ -998,6 +999,16 @@ export default class newProjectPage {
                 }
         }
 
+        async clickNewProjectByYourselfBtn() {
+                const ele = await this.page.locator(this.newProjectPageElements.newProjectByYourselfBtn)
+                await this.page.waitForSelector(this.newProjectPageElements.newProjectByYourselfBtn)
+                try {
+                        await ele.click({ button: "left", delay: 100 })
+                } catch (error) {
+                        throw new Error(`User Dashboard | Quick Start | Add New Project | New Project By Yourself Button Is Not Visible | Could not find locator:"${error}"`)
+                }
+        }
+
 
         async inputIdeaForNewProject(text: string) {
                 const ele = await this.page.locator(this.newProjectPageElements.typeIdeaInputField)
@@ -1045,6 +1056,7 @@ export default class newProjectPage {
 
         async clickAddPartsOrComponentsSearchIcon() {
                 const ele = await this.page.locator(this.newProjectPageElements.addPartsOrComponentSearchIcon).nth(2)
+                await this.page.waitForSelector(this.newProjectPageElements.addPartsOrComponentSearchIcon).nth(2)
                 try {
                         await ele.click({ button: 'left', delay: 100 })
                         await this.page.waitForTimeout(3000)
