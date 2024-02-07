@@ -1,18 +1,39 @@
 import dappwright, { Dappwright, MetaMaskWallet } from "@tenkeylabs/dappwright";
-import { BrowserContext, expect, test as baseTest } from "@playwright/test";
+import { expect, test as baseTest } from "@playwright/test";
+import { test as base, chromium, type BrowserContext } from '@playwright/test';
+const path = require('path');
+const userDirData = path.join(__dirname, '/tests/QuickStart/User-Data-Dir/Chrome/User Data/Default/Extensions/nkbihfbeogaeaoehlefnkodbefgpgknn/10.35.1_0');
 
-export const test = baseTest.extend<{
+export const test = base.extend<{
   context: BrowserContext;
   wallet: Dappwright;
 }>({
   context: async ({ }, use) => {
     // Launch context with extension
-    const [wallet, _, context] = await dappwright.bootstrap("", {
+    const pathToExtension = path.join(__dirname, '/MyMetamaskExtension');
+    const [wallet, _, context,] = await dappwright.bootstrap("", {
+      userDirData,
+
       wallet: "metamask",
       version: MetaMaskWallet.recommendedVersion,
       seed: "test test test test test test test test test test test junk", // Hardhat's default https://hardhat.org/hardhat-network/docs/reference#accounts
       headless: false,
+      // args: [
+      //   `--disable-extensions-except=${pathToExtension}`,
+      //   `--load-extension=${pathToExtension}`,
+      // ],
     });
+
+    // context: async ({ }, use) => {
+    //   const pathToExtension = path.join(__dirname, '/MyMetamaskExtension');
+    //   const [wallet, _, context]  = await chromium.launchPersistentContext(userDirData, {
+    //     headless: false,
+    //     args: [
+    //       `--disable-extensions-except=${pathToExtension}`,
+    //       `--load-extension=${pathToExtension}`,
+    //     ],
+    //   });
+
 
     // Add Hardhat as a custom network
     await wallet.addNetwork({
@@ -21,6 +42,8 @@ export const test = baseTest.extend<{
       chainId: 80001,
       symbol: "MATIC",
     });
+    await wallet.importPK('17a75569989837200a68b0e0a41a19d0bd9996104011f098fecf912b6fcd8c20');
+
 
     await use(context);
   },

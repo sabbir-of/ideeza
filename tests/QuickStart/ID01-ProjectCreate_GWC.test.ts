@@ -6,23 +6,30 @@ import * as data from "@testData/login.cred.json";
 
 
 
-test('Add New Project With Give With Community', async ({ page, newProjectPage, loginPage, wallet }) => {
+test('Add New Project With Give With Community', async ({ page, wallet }) => {
+
 
         await page.goto("https://frontdev.ideeza.com/", { timeout: 1200000, waitUntil: "domcontentloaded" })
 
 
-        const pages = page.context().pages()
-        console.log(pages.length);
+        // const pages = page.context().pages()
+        // console.log(pages.length);
 
-        await loginPage.clickOnCookiesCheckBox()
-        await loginPage.clickOnApproveBtn()
-        await loginPage.login(data.email, data.password)
+        // const newProjectPages = new newProjectPage(pages[4])
+        // const loginPage = new LoginPage(pages[4])
+        const newProjectPages = new newProjectPage(page)
+        const loginPages = new LoginPage(page)
+
+
+
+        await loginPages.clickOnCookiesCheckBox()
+        await loginPages.clickOnApproveBtn()
+        await loginPages.login(data.email, data.password)
 
         //     await pages[0].close()
 
         //page configaration here
-        // const newProjectPages = new newProjectPage(pages[1])
-        // const metaMask = new metaMaskPage(pages[2])
+
 
         // // await page.pause()
         // await test.step("Unlock MetaMask", async () => {
@@ -32,146 +39,146 @@ test('Add New Project With Give With Community', async ({ page, newProjectPage, 
         // })
         // await page.bringToFront()
 
+        await page.waitForLoadState("networkidle")
+        await newProjectPages.clickTakeATourStartBtn()
+        await newProjectPages.clickTakeATourSkipBtn()
 
-        await newProjectPage.clickTakeATourStartBtn()
-        await newProjectPage.clickTakeATourSkipBtn()
 
-        await newProjectPage.clickQuickStartBtn()
-        await newProjectPage.clickNewProjectBtn()
-        await newProjectPage.clickNewProjectByYourselfBtn()
-        await newProjectPage.clickAddPartsOrComponentsSearchIcon()
+        await newProjectPages.clickOnQuickStartBtn()
+        await newProjectPages.clickNewProjectBtn()
+        await newProjectPages.clickNewProjectByYourselfBtn()
+        await page.waitForLoadState("networkidle")
+        await newProjectPages.clickAddPartsOrComponentsSearchIcon()
         // //search parts and components
-        // await newProjectPage.searchPartsAndComponents(" ")
+        // await newProjectPages.searchPartsAndComponents(" ")
         //click to select atmega search result for parts and components
-        await newProjectPage.clickOnQAElectronicsPartsComponent()
-
-
+        await newProjectPages.clickOnQAElectronicsPartsComponent()
         //click on the atmega public option to select a parts
-        await newProjectPage.clickOnAtmegaPublicOption()
+        await newProjectPages.clickOnAtmegaPublicOption()
         // //click atmega first parts
-        await newProjectPage.clickOnPremiumPart()
+        await newProjectPages.clickOnPremiumPart()
         // //click parts use button
-        await newProjectPage.clickUseBtn()
+        await newProjectPages.clickUseBtn()
 
         // await page.getByText('dmeo part 11').click();
         // await page.getByRole('button', { name: 'use' }).click();
         // await page.getByRole('button', { name: 'No' }).click();
 
-        await newProjectPage.IfAlertTextIsVisibleThenClickOnIt()
+        await newProjectPages.IfAlertTextIsVisibleThenClickOnIt()
 
 
-        await newProjectPage.clickAddPartsOrComponentsSearchIcon()
+        await newProjectPages.clickAddPartsOrComponentsSearchIcon()
 
-        await newProjectPage.clickOnLoadPriveousProjectNoBtn()
+        await newProjectPages.clickOnLoadPriveousProjectNoBtn()
 
 
         //click on add parts or component search button **There is an issue, after click on use button then should collapse the parts and componets modal
-        await newProjectPage.clickAddPartsOrComponentsSearchIcon()
+        await newProjectPages.clickAddPartsOrComponentsSearchIcon()
 
         //click on electron page next button
-        await newProjectPage.clickOnNextBtn()
+        await newProjectPages.clickOnNextBtn()
         //click on electron section submit button
-        await newProjectPage.clickOnElectroncisSectionSubmitBtn()
-        await newProjectPage.clickOnElectroncisSectionSubmitBtn()
+        await newProjectPages.clickOnElectroncisSectionSubmitBtn()
+        await newProjectPages.clickOnElectroncisSectionSubmitBtn()
 
         //***code section***
         //click on code section
-        await newProjectPage.clickOnCodeSection()
+        await newProjectPages.clickOnCodeSection()
         //click on code section search button
-        await newProjectPage.clickCodeSectionAddPartsOrComponentsSearchIcon()
+        await newProjectPages.clickCodeSectionAddPartsOrComponentsSearchIcon()
         // //search parts and components
-        // await newProjectPage.searchCodePartsAndComponents("System Defined")
+        // await newProjectPages.searchCodePartsAndComponents("System Defined")
         //click system defined build in code section
-        await newProjectPage.clickOnSystemDefineBuildInCode()
+        await newProjectPages.clickOnSystemDefineBuildInCode()
         //click system defined build in Logic code section
-        await newProjectPage.clickOnSystemDefineBuildInLogicCode()
+        await newProjectPages.clickOnSystemDefineBuildInLogicCode()
         //click system defined build in Logic First code section
-        await newProjectPage.clickOnSystemDefineBuildInFirstLogicCode()
+        await newProjectPages.clickOnSystemDefineBuildInFirstLogicCode()
         //click parts use button
-        await newProjectPage.clickUseBtn()
+        await newProjectPages.clickUseBtn()
         //click on add parts or component search button **There is an issue, after click on use button then should collapse the parts and componets modal
-        await newProjectPage.clickCodeSectionAddPartsOrComponentsSearchIcon()
+        await newProjectPages.clickCodeSectionAddPartsOrComponentsSearchIcon()
         //click on code section create button
-        await newProjectPage.clickOnCodeSectionCreateBtn()
+        await newProjectPages.clickOnCodeSectionCreateBtn()
 
 
         //start cover section
         //click on cover section
-        await newProjectPage.clickOnCoverSection()
+        await newProjectPages.clickOnCoverSection()
         //click on cover section search button
-        await newProjectPage.clickOnCoverSectionSearchBtn()
+        await newProjectPages.clickOnCoverSectionSearchBtn()
         //search parts and components
-        await newProjectPage.searchCoverPartsAndComponents("ALL 3D Models")
+        // await newProjectPages.searchCoverPartsAndComponents("ALL 3D Models") here is issue
         // //click on the all 3d model part btn
-        // await newProjectPage.clickOnCoverSectionAll3DModelPartBtn()
+        // await newProjectPages.clickOnCoverSectionAll3DModelPartBtn()
         // //click on the Cover Section All 3D Model Part public option to select a parts
-        // await newProjectPage.clickOnAtmegaPublicOption()
+        // await newProjectPages.clickOnAtmegaPublicOption()
         // //click to select cover section parts
-        // await newProjectPage.clickToSelectionCoverSectio3DPart()
+        // await newProjectPages.clickToSelectionCoverSectio3DPart()
         // //click parts use button
-        // await newProjectPage.clickUseBtn()
+        // await newProjectPages.clickUseBtn()
 
 
         //click on general section button
-        await newProjectPage.clickOnGeneralTab()
-        await newProjectPage.clickOnYesButtonIfVisible()
+        await newProjectPages.clickOnGeneralTab()
+        await newProjectPages.clickOnYesButtonIfVisible()
         //click on general section create button
-        await newProjectPage.clickOnGeneralSectonCreateProjectBtn()
+        await newProjectPages.clickOnGeneralSectonCreateProjectBtn()
 
 
         //click give to the cmunity button
-        await newProjectPage.clickGiveToTheComunityBtn()
+        await newProjectPages.clickGiveToTheComunityBtn()
         //click to choose project
-        await newProjectPage.clickChooseProjectBtn("CREATE NEW")
+        await newProjectPages.clickChooseProjectBtn("CREATE NEW")
         //Input Name Of the Project
-        await newProjectPage.inputNameOfProject("Demo Project Name")
+        await newProjectPages.inputNameOfProject("Demo Project Name")
         //choose Project License
-        await newProjectPage.clickToChooseLicense()
+        await newProjectPages.clickToChooseLicense()
         //click to select mit license
-        await newProjectPage.clickToSelectMITLicense()
+        await newProjectPages.clickToSelectMITLicense()
         //Choose Block Chain Mint
-        await newProjectPage.clickToChooseBlockChainMint("Mumbai Testnet (Polygon)")
+        await newProjectPages.clickToChooseBlockChainMint("Mumbai Testnet (Polygon)")
         //Click on Choose Collection section
-        await newProjectPage.clickToChooseProjectCollections()
+        await newProjectPages.clickToChooseProjectCollections()
         //select collection
-        await newProjectPage.clickToChooseProjectCollection("1")
+        await newProjectPages.clickToChooseProjectCollection("1")
         //Input Descriptions
-        await newProjectPage.inputProjectDescription("Lorem Ipsum is simply dummy text of the printing")
+        await newProjectPages.inputProjectDescription("Lorem Ipsum is simply dummy text of the printing")
         //Click Step One Next Button
-        await newProjectPage.clickStepOneNextBtn()
+        await newProjectPages.clickStepOneNextBtn()
 
         //Verify Step Two Title Text
-        // await newProjectPage.verifyProjectSocialPreviewText("Project social Preview")
+        // await newProjectPages.verifyProjectSocialPreviewText("Project social Preview")
 
         // //Click On Video Edit Button
-        // await newProjectPage.clickVideoEditBtn()
+        // await newProjectPages.clickVideoEditBtn()
         // //Click On Video Edit Section Save Button ***Video Editor Does Not Work Properly***
-        // await newProjectPage.clickVideoEditSectionSaveBtn()
+        // await newProjectPages.clickVideoEditSectionSaveBtn()
         // //click on video editor close btn
-        // await newProjectPage.clickToCloseVideoEditor()
+        // await newProjectPages.clickToCloseVideoEditor()
 
         //Click To Disable New Feed Share
-        await newProjectPage.clickToDisableNewsFeedShare()
+        await newProjectPages.clickToDisableNewsFeedShare()
         //Click On Confirm Check Box
-        await newProjectPage.clickToConfirmConditionCheckBox()
+        await newProjectPages.clickToConfirmConditionCheckBox()
         //Click On Step Two Give The Comunity Button
-        await newProjectPage.clickStepTwoGiveTheComunityBtn()
+        await newProjectPages.clickStepTwoGiveTheComunityBtn()
         //click on connect wallet button
-        await newProjectPage.clickOnConnectWalletBtn()
+        await newProjectPages.clickOnConnectWalletBtn()
         //Click On metamask button
-        await newProjectPage.clickOnMetaMaskBtn()
+        await newProjectPages.clickOnMetaMaskBtn()
 
         await wallet.approve()
 
-        await newProjectPage.clickOnContinueButton()
+        await newProjectPages.clickOnContinueButton()
 
-        await newProjectPage.clickOnCheckOutBtn()
+        await newProjectPages.clickOnCheckOutBtn()
 
-        await newProjectPage.clickOnPaypalSectionConfirmCheckBox()
+        await newProjectPages.clickOnPaypalSectionConfirmCheckBox()
 
 
         const newTab = await test.step("New Tab", async () => {
-                return await newProjectPage.clickOnPayWithPaypalBtn()
+                return await newProjectPages.clickOnPayWithPaypalBtn()
         })
 
         await test.step("New Tab", async () => {
@@ -186,7 +193,7 @@ test('Add New Project With Give With Community', async ({ page, newProjectPage, 
                 await payPalPage.clickOnPaypalPaymentConfirmBtn()
 
         })
-        await newProjectPage.clickOnMyProjectPage()
+        await newProjectPages.clickOnMyProjectPage()
         await page.waitForLoadState("load")
 
 

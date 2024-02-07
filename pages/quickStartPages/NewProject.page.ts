@@ -18,7 +18,7 @@ export default class newProjectPage {
         constructor(private page: Page) {
         }
         private newProjectPageElements = {
-                quickStartBtn: "(//img[@alt='arrow'])[1]",
+                quickStartBtn: "//div[text()='Quick Start']",
                 newPartBtn: "//p[text()='New Part']",
                 threeDCaseBtn: "//p[text()='3D case']",
                 newProjectBtn: "//p[text()='New Project']",
@@ -55,9 +55,9 @@ export default class newProjectPage {
 
                 coverSectionParts: "//div[text()='ALL 3D Models']",
                 qaElectronicsPartsBtn: "//div[text()='AD8497ARMZ']",
-                premiumPart: `//b[@title='Electronic Part']`,
+                premiumPart: `//b[@title='Demo Part']`,
                 qaTestCatagory: "//div[text()='QA Test']",
-                qaElectronicsPremiumPartsBtn: "//b[@title='Electronic Part']",
+                qaElectronicsPremiumPartsBtn: "//b[@title='Demo Part']",
                 qaElectronicsPartsSelectionBtn: "//b[@title='Test With Ligthing']",
                 searchResultForPartsAndComponets: "//div[text()='Atmega']",
                 atmegaPublicOption: "//span[text()='Public']",
@@ -322,7 +322,16 @@ export default class newProjectPage {
                         throw new Error(`User Dashboard | Parts | Added Part or component General Section Name Input Field Button Is Not Visible | Could not find locator:"${error}"`)
                 }
         }
+        async clickOnCookiesCheckBox() {
+                const ele = await this.page.locator(this.newProjectPageElements.cookieCheckBox)
+                try {
 
+                        await ele.click({ button: "left", delay: 100 })
+
+                } catch (error) {
+                        throw new Error(`Home Sceen | Cookies CheckBox Is Not Visible | Could not find locator:"${error}"`)
+                }
+        }
 
         async inputPartDescriptoin() {
                 const ele = await this.page.locator(this.newProjectPageElements.partDescriptionsInputField)
@@ -953,12 +962,20 @@ export default class newProjectPage {
 
 
 
-
+        async clickOnQuickStartBtn() {
+                const ele = await this.page.locator(this.newProjectPageElements.quickStartBtn)
+                try {
+                        await ele.click({ force: true })
+                } catch (error) {
+                        throw new Error(`User Dashboard | Quick Start Button Is Not Visible | Could not find locator:"${error}"`)
+                }
+        }
 
 
 
         async clickQuickStartBtn() {
                 const ele = await this.page.locator(this.newProjectPageElements.quickStartBtn)
+
                 try {
                         await this.page.waitForTimeout(2000)
                         await ele.click({ button: "left", force: true })
@@ -1036,14 +1053,7 @@ export default class newProjectPage {
                 }
         }
 
-        async clickOnCookiesCheckBox() {
-                const ele = await this.page.locator(this.newProjectPageElements.cookieCheckBox)
-                try {
-                        await ele.click({ button: "left", delay: 100 })
-                } catch (error) {
-                        throw new Error(`Home Sceen | Cookies CheckBox Is Not Visible | Could not find locator:"${error}"`)
-                }
-        }
+
 
         async clickDesignNewProjectByYourself() {
                 const ele = await this.page.locator(this.newProjectPageElements.newProjectByYourselfBtn)
@@ -1055,8 +1065,7 @@ export default class newProjectPage {
         }
 
         async clickAddPartsOrComponentsSearchIcon() {
-                const ele = await this.page.locator(this.newProjectPageElements.addPartsOrComponentSearchIcon).nth(2)
-                await this.page.waitForSelector(this.newProjectPageElements.addPartsOrComponentSearchIcon).nth(2)
+                const ele = await this.page.locator(this.newProjectPageElements.addPartsOrComponentSearchIcon).nth(1)
                 try {
                         await ele.click({ button: 'left', delay: 100 })
                         await this.page.waitForTimeout(3000)
@@ -1075,7 +1084,7 @@ export default class newProjectPage {
 
         }
         async clickOnCoverSectionSearchBtn() {
-                const ele = await this.page.locator(this.newProjectPageElements.coverSectionSearchBtn).nth(1)
+                const ele = await this.page.locator(this.newProjectPageElements.coverSectionSearchBtn).nth(2)
                 try {
                         await ele.click({ button: 'left', delay: 100 })
                         await this.page.waitForTimeout(2000)
@@ -1088,9 +1097,9 @@ export default class newProjectPage {
                 // await this.page.waitForSelector(this.newProjectPageElements.getStartedBtn)
                 const ele = await this.page.locator(this.newProjectPageElements.getStartedBtn).nth(0)
                 try {
-                        if (await ele.isVisible()) {
-                                await ele.click({ button: 'left', delay: 100, force: true })
-                        }
+                        // if (await ele.isVisible()) {
+                        await ele.click({ button: 'left', delay: 100, force: true })
+                        // }
 
                 } catch (error) {
                         // throw new Error(`User Dashboard | Quick Start | Cover Add Component | Add Component Text Is Not Visible | Could not find locator:"${error}"`)
@@ -1100,9 +1109,9 @@ export default class newProjectPage {
         async clickTakeATourSkipBtn() {
                 const ele = await this.page.locator(this.newProjectPageElements.takeAtourSkipBtn).nth(0)
                 try {
-                        if (await ele.isVisible()) {
-                                await ele.click({ button: 'left', delay: 100 })
-                        }
+                        // if (await ele.isVisible()) {
+                        await ele.click({ button: 'left', delay: 100 })
+                        // }
                 } catch (error) {
                         // throw new Error(`User Dashboard | Quick Start | Cover Add Component | Take A Tour Skip Button Is Not Visible | Could not find locator:"${error}"`)
                 }
@@ -1308,7 +1317,7 @@ export default class newProjectPage {
                 }
         }
         async clickOnElectroncisSectionSubmitBtn() {
-                const ele = await this.page.locator(this.newProjectPageElements.electronicSectionSubmitBtn).nth(1)
+                const ele = await this.page.locator(this.newProjectPageElements.electronicSectionSubmitBtn).nth(2)
                 try {
                         await ele.click({ button: "left", force: true })
                 } catch (error) {
