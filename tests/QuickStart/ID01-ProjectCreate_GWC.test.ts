@@ -36,6 +36,8 @@ test('Add New Project With Give With Community', async ({ page, newProjectPage, 
         await newProjectPage.clickTakeATourStartBtn()
         await newProjectPage.clickTakeATourSkipBtn()
 
+        await newProjectPage.clickQuickStartBtn()
+        await newProjectPage.clickNewProjectBtn()
         await newProjectPage.clickAddPartsOrComponentsSearchIcon()
         // //search parts and components
         // await newProjectPage.searchPartsAndComponents(" ")
