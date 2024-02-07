@@ -221,9 +221,9 @@ export default class LoginPage {
     async clickOnCookiesCheckBox() {
         const ele = await this.page.locator(this.loginPageElements.cookieCheckBox)
         try {
-            if (await ele.isVisible()) {
-                await ele.click({ button: "left", delay: 100 })
-            }
+
+            await ele.click({ button: "left", delay: 100 })
+
         } catch (error) {
             throw new Error(`Home Sceen | Cookies CheckBox Is Not Visible | Could not find locator:"${error}"`)
         }
@@ -232,9 +232,9 @@ export default class LoginPage {
     async clickOnApproveBtn() {
         const ele = await this.page.locator(this.loginPageElements.approveBtn)
         try {
-            if (await ele.isVisible()) {
+            // if (await ele.isVisible()) {
                 await ele.click({ button: "left", delay: 100 })
-            }
+            // }
         } catch (error) {
             throw new Error(`Home Sceen | Cookies Approve Is Not Visible | Could not find locator:"${error}"`)
         }

@@ -18,7 +18,7 @@ export default class newProjectPage {
         constructor(private page: Page) {
         }
         private newProjectPageElements = {
-                quickStartBtn: "//div[text()='Quick Start']",
+                quickStartBtn: "(//img[@alt='arrow'])[1]",
                 newPartBtn: "//p[text()='New Part']",
                 threeDCaseBtn: "//p[text()='3D case']",
                 newProjectBtn: "//p[text()='New Project']",

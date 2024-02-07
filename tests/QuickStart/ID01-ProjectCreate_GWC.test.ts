@@ -8,7 +8,7 @@ import * as data from "@testData/login.cred.json";
 
 test('Add New Project With Give With Community', async ({ page, newProjectPage, loginPage, wallet }) => {
 
-        await page.goto("https://frontdev.ideeza.com/user/dashboard/project/create", { timeout: 1200000, waitUntil: "domcontentloaded" })
+        await page.goto("https://frontdev.ideeza.com/", { timeout: 1200000, waitUntil: "domcontentloaded" })
 
 
         const pages = page.context().pages()
