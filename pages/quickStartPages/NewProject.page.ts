@@ -21,7 +21,7 @@ export default class newProjectPage {
                 quickStartBtn: "//div[text()='Quick Start']",
                 newPartBtn: "//p[text()='New Part']",
                 threeDCaseBtn: "//p[text()='3D case']",
-                newProjectBtn: "//div[text()='New Project']",
+                newProjectBtn: "//p[text()='New Project']",
                 typeIdeaInputField: `(//textarea[@placeholder='Start now – type your idea here...'])[2]`,
                 goBtn: "(//div[contains(@class,'absolute custom-top-icon-creat')])[2]",
                 getStartedBtn: "//div[text()='Get Started']",
@@ -990,6 +990,7 @@ export default class newProjectPage {
 
         async clickNewProjectBtn() {
                 const ele = await this.page.locator(this.newProjectPageElements.newProjectBtn)
+                await this.page.waitForSelector(this.newProjectPageElements.newProjectBtn)
                 try {
                         await ele.click({ button: "left", delay: 100 })
                 } catch (error) {
