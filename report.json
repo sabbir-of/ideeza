@@ -88,26 +88,22 @@
               "results": [
                 {
                   "workerIndex": 0,
-                  "status": "failed",
-                  "duration": 232126,
+                  "status": "timedOut",
+                  "duration": 300003,
                   "error": {
-                    "message": "Error: User Dashboard | Quick Start | Cover Add Component | Add Parts or Component Search Input Functionality Does Not Work Properly | Could not find locator:\"TimeoutError: locator.clear: Timeout 60000ms exceeded.\nCall log:\n  \u001b[2m- waiting for locator('xpath=(//input[@placeholder=\\'Add parts or components\\'])[2]')\u001b[22m\n\u001b[2m  -   locator resolved to <input value=\"\" placeholder=\"Add parts or components\" c…/>\u001b[22m\n\u001b[2m  - elementHandle.fill(\"\")\u001b[22m\n\u001b[2m  -   waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m  -     element is not visible - waiting...\u001b[22m\n\"",
-                    "stack": "Error: User Dashboard | Quick Start | Cover Add Component | Add Parts or Component Search Input Functionality Does Not Work Properly | Could not find locator:\"TimeoutError: locator.clear: Timeout 60000ms exceeded.\nCall log:\n  \u001b[2m- waiting for locator('xpath=(//input[@placeholder=\\'Add parts or components\\'])[2]')\u001b[22m\n\u001b[2m  -   locator resolved to <input value=\"\" placeholder=\"Add parts or components\" c…/>\u001b[22m\n\u001b[2m  - elementHandle.fill(\"\")\u001b[22m\n\u001b[2m  -   waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m  -     element is not visible - waiting...\u001b[22m\n\"\n    at newProjectPage.searchCoverPartsAndComponents (D:\\2024\\Ideeza\\ideeza\\pages\\quickStartPages\\NewProject.page.ts:1148:31)\n    at D:\\2024\\Ideeza\\ideeza\\tests\\QuickStart\\ID01-ProjectCreate_GWC.test.ts:111:9",
-                    "location": {
-                      "file": "D:\\2024\\Ideeza\\ideeza\\pages\\quickStartPages\\NewProject.page.ts",
-                      "column": 31,
-                      "line": 1148
-                    },
-                    "snippet": "\u001b[90m   at \u001b[39mpages\\quickStartPages\\NewProject.page.ts:1148\n\n\u001b[0m \u001b[90m 1146 |\u001b[39m                         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m2000\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m 1147 |\u001b[39m                 } \u001b[36mcatch\u001b[39m (error) {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 1148 |\u001b[39m                         \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m`User Dashboard | Quick Start | Cover Add Component | Add Parts or Component Search Input Functionality Does Not Work Properly | Could not find locator:\"${error}\"`\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m      |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 1149 |\u001b[39m                 }\u001b[0m\n\u001b[0m \u001b[90m 1150 |\u001b[39m         }\u001b[0m\n\u001b[0m \u001b[90m 1151 |\u001b[39m\u001b[0m"
+                    "message": "\u001b[31mTest timeout of 300000ms exceeded.\u001b[39m"
                   },
                   "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 300000ms exceeded.\u001b[39m"
+                    },
                     {
                       "location": {
                         "file": "D:\\2024\\Ideeza\\ideeza\\pages\\quickStartPages\\NewProject.page.ts",
                         "column": 31,
-                        "line": 1148
+                        "line": 1840
                       },
-                      "message": "Error: User Dashboard | Quick Start | Cover Add Component | Add Parts or Component Search Input Functionality Does Not Work Properly | Could not find locator:\"TimeoutError: locator.clear: Timeout 60000ms exceeded.\nCall log:\n  \u001b[2m- waiting for locator('xpath=(//input[@placeholder=\\'Add parts or components\\'])[2]')\u001b[22m\n\u001b[2m  -   locator resolved to <input value=\"\" placeholder=\"Add parts or components\" c…/>\u001b[22m\n\u001b[2m  - elementHandle.fill(\"\")\u001b[22m\n\u001b[2m  -   waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m  -     element is not visible - waiting...\u001b[22m\n\"\n\n\u001b[90m   at \u001b[39mpages\\quickStartPages\\NewProject.page.ts:1148\n\n\u001b[0m \u001b[90m 1146 |\u001b[39m                         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m2000\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m 1147 |\u001b[39m                 } \u001b[36mcatch\u001b[39m (error) {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 1148 |\u001b[39m                         \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m`User Dashboard | Quick Start | Cover Add Component | Add Parts or Component Search Input Functionality Does Not Work Properly | Could not find locator:\"${error}\"`\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m      |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 1149 |\u001b[39m                 }\u001b[0m\n\u001b[0m \u001b[90m 1150 |\u001b[39m         }\u001b[0m\n\u001b[0m \u001b[90m 1151 |\u001b[39m\u001b[0m\n\n\u001b[2m    at newProjectPage.searchCoverPartsAndComponents (D:\\2024\\Ideeza\\ideeza\\pages\\quickStartPages\\NewProject.page.ts:1148:31)\u001b[22m\n\u001b[2m    at D:\\2024\\Ideeza\\ideeza\\tests\\QuickStart\\ID01-ProjectCreate_GWC.test.ts:111:9\u001b[22m"
+                      "message": "Error: User Dashboard | Quick Start | Add New Project | Project Create With Give To The Comunity CheckOut Button Is Not Visible | Could not find locator:\"TimeoutError: locator.click: Timeout 60000ms exceeded.\nCall log:\n  \u001b[2m- waiting for locator('//div[text()=\\'Checkout\\']')\u001b[22m\n\"\n\n\u001b[90m   at \u001b[39mpages\\quickStartPages\\NewProject.page.ts:1840\n\n\u001b[0m \u001b[90m 1838 |\u001b[39m                         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m5000\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m 1839 |\u001b[39m                 } \u001b[36mcatch\u001b[39m (error) {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 1840 |\u001b[39m                         \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m`User Dashboard | Quick Start | Add New Project | Project Create With Give To The Comunity CheckOut Button Is Not Visible | Could not find locator:\"${error}\"`\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m      |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 1841 |\u001b[39m                 }\u001b[0m\n\u001b[0m \u001b[90m 1842 |\u001b[39m         }\u001b[0m\n\u001b[0m \u001b[90m 1843 |\u001b[39m\u001b[0m\n\n\u001b[2m    at newProjectPage.clickOnCheckOutBtn (D:\\2024\\Ideeza\\ideeza\\pages\\quickStartPages\\NewProject.page.ts:1840:31)\u001b[22m\n\u001b[2m    at D:\\2024\\Ideeza\\ideeza\\tests\\QuickStart\\ID01-ProjectCreate_GWC.test.ts:175:9\u001b[22m"
                     }
                   ],
                   "stdout": [
@@ -115,20 +111,23 @@
                       "text": "\n"
                     },
                     {
-                      "text": "Running tests on metamask version 11.3.0\n"
+                      "text": "Running tests on metamask version 11.7.5\n"
                     },
                     {
                       "text": "\n"
+                    },
+                    {
+                      "text": "Downloading extension...\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-02-07T16:41:15.795Z",
+                  "startTime": "2024-02-07T16:46:00.607Z",
                   "attachments": [
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "D:\\2024\\Ideeza\\ideeza\\test-results\\tests-QuickStart-ID01-ProjectCreate_GWC-Add-New-Project-With-Give-With-Community\\test-failed-2.png"
+                      "path": "D:\\2024\\Ideeza\\ideeza\\test-results\\tests-QuickStart-ID01-ProjectCreate_GWC-Add-New-Project-With-Give-With-Community\\test-failed-3.png"
                     },
                     {
                       "name": "screenshot",
@@ -138,7 +137,7 @@
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "D:\\2024\\Ideeza\\ideeza\\test-results\\tests-QuickStart-ID01-ProjectCreate_GWC-Add-New-Project-With-Give-With-Community\\test-failed-3.png"
+                      "path": "D:\\2024\\Ideeza\\ideeza\\test-results\\tests-QuickStart-ID01-ProjectCreate_GWC-Add-New-Project-With-Give-With-Community\\test-failed-2.png"
                     },
                     {
                       "name": "screenshot",
@@ -150,12 +149,7 @@
                       "contentType": "application/zip",
                       "path": "D:\\2024\\Ideeza\\ideeza\\test-results\\tests-QuickStart-ID01-ProjectCreate_GWC-Add-New-Project-With-Give-With-Community\\trace.zip"
                     }
-                  ],
-                  "errorLocation": {
-                    "file": "D:\\2024\\Ideeza\\ideeza\\pages\\quickStartPages\\NewProject.page.ts",
-                    "column": 31,
-                    "line": 1148
-                  }
+                  ]
                 }
               ],
               "status": "unexpected"
@@ -171,8 +165,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-02-07T16:41:11.973Z",
-    "duration": 244556.79400000002,
+    "startTime": "2024-02-07T16:45:56.513Z",
+    "duration": 530734.413,
     "expected": 0,
     "skipped": 0,
     "unexpected": 1,
