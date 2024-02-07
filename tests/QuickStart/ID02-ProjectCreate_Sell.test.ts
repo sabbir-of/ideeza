@@ -1,50 +1,18 @@
-import { BrowserContext, Page, chromium } from "playwright";
-import * as data from "@testData/login.cred.json";
-import { test } from "@playwright/test";
-const path = require('path');
-import newProjectPage from "@pages/NewProject.page";
-import testData from "@testData/testData";
-import metaMaskPage from "@pages/metamask.page";
+import test, { expect } from "@fixtures/basePages"
 import LoginPage from "@pages/Login.page";
-// `--use-file-for-fake-video-capture=${__dirname}/testData/videos/mobile.y4m`
-// test.describe('User | Quick Start | New Project', () => {
-let context: BrowserContext;
-let page: Page;
-const pathToExtension = path.join(__dirname, '/MyMetamaskExtension');
-const userDirData = path.join(__dirname, '/tests/QuickStart/User-Data-Dir/Chrome/User Data/Default/Extensions/nkbihfbeogaeaoehlefnkodbefgpgknn/10.35.1_0');
-test.beforeAll(async () => {
-
-        context = await chromium.launchPersistentContext(userDirData, {
-                headless: false,
-                channel: 'chrome',
-                baseURL: "https://frontdev.ideeza.com/",
-                viewport: { width: 1700, height: 920 },
-                timeout: 1 * 30 * 40000,
-                slowMo: 100,
-
-                args: [
-                        `--disable-extensions-except=${pathToExtension}`,
-                        `--load-extension=${pathToExtension}`,
-                        // `--disable-extensions-except=${path.join(__dirname, '/MyMetamaskExtension')}`,
-                        // `--load-extension=${path.join(__dirname, '/MyMetamaskExtension')}`,
-                ],
-
-        });
-        page = await context.newPage();
-        test.setTimeout(120000)
-        // const newProjectPages = new newProjectPage(page)
-
-});
+import newProjectPage from "@pages/NewProject.page";
+import metaMaskPage from "@pages/metamask.page";
+import * as data from "@testData/login.cred.json";
 
 
 
 
 
-test('ID-003 | User | Validate Sell Project Create ', async () => {
+test('ID-003 | User | Validate Sell Project Create ', async ({ page }) => {
 
 
         await page.goto("/user/dashboard/project/create", { timeout: 1200000, waitUntil: "domcontentloaded" })
-        await page.waitForNavigation()
+
 
 
         const pages = page.context().pages()
@@ -55,13 +23,13 @@ test('ID-003 | User | Validate Sell Project Create ', async () => {
         //page configaration here
         const newProjectPages = new newProjectPage(pages[1])
         const metaMask = new metaMaskPage(pages[2])
-        
-                // await page.pause()
-                await test.step("Unlock MetaMask", async () => {
-                        await metaMask.metaMaskUnlockHelper()
-                        // await metaMask.inputUnlockPassword()
-                        // await metaMask.clickOnUnlockBtn()
-                })
+
+        // await page.pause()
+        await test.step("Unlock MetaMask", async () => {
+                await metaMask.metaMaskUnlockHelper()
+                // await metaMask.inputUnlockPassword()
+                // await metaMask.clickOnUnlockBtn()
+        })
         await page.bringToFront()
 
 
@@ -78,13 +46,11 @@ test('ID-003 | User | Validate Sell Project Create ', async () => {
         //click on the atmega public option to select a parts
         await newProjectPages.clickOnAtmegaPublicOption()
         // //click atmega first parts
-        // await newProjectPages.clickToSelectPrimiumParts()
+        await newProjectPages.clickOnPremiumPart()
         // //click parts use button
-        // await newProjectPages.clickUseBtn()
+        await newProjectPages.clickUseBtn()
 
-        await page.getByText('dmeo part 11').click();
-        await page.getByRole('button', { name: 'use' }).click();
-        await page.getByRole('button', { name: 'No' }).click();
+
 
         await newProjectPages.IfAlertTextIsVisibleThenClickOnIt()
 

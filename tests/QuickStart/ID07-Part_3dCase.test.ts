@@ -1,111 +1,113 @@
-import { BrowserContext, Page, chromium } from "playwright";
-import * as data from "@testData/login.cred.json";
-const path = require('path');
-import testData from "@testData/testData";
 import test, { expect } from "@fixtures/basePages"
-
-// test.beforeEach(async ({ page, wallet }) => {
-//         await page.goto("https://frontdev.ideeza.com/")
-//         await page.waitForLoadState("networkidle")
-//         // await wallet.createAccount()
-//         await wallet.switchNetwork("Polygon Testnet")
-//         await wallet.importPK(data.token)
-
-// });
-
-// test('ID-Parts-3DCase-001 | User |  Validate User Can Successfully Part Wit 3D Case', async ({ page, loginPage, wallet, newProjectPage }) => {
-
-//         // await page.goto("/user/dashboard/cover/add-part", { timeout: 1200000, waitUntil: "domcontentloaded" })
-
-//         // await wallet.createAccount()
-
-//         // await wallet.importPK(data.token)
-//         await loginPage.clickOnCookiesCheckBox()
-//         await loginPage.clickOnApproveBtn()
-//         await loginPage.login(data.email, data.password)
-//         await page.waitForLoadState("networkidle")
-//         // await newProjectPage.clickOnApproveBtn()
-//         await newProjectPage.clickTakeATourStartBtn()
-//         await newProjectPage.clickTakeATourSkipBtn()
-
-//         await newProjectPage.clickQuickStartBtn()
-//         await newProjectPage.clickOnNewPartBtn()
-//         await newProjectPage.clickOn3CCaseBtn()
-//         //click search btn
-//         await newProjectPage.clickOnPartsSectionSearchBtn()
-
-//         //click on parts catagory sectoin
-//         await newProjectPage.clickOnPartCatagorySection()
-//         //click on catagory public button
-//         await newProjectPage.clickOnCatagoryPublicBtn()
-
-//         //click on catagory public button
-//         await newProjectPage.clickOnPartBtn()
-
-//         //click on catagory public button
-//         await newProjectPage.clickOnUseBtn()
-
-//         //click search btn
-//         await newProjectPage.clickOnPartsSectionSearchBtn()
-
-//         await newProjectPage.IfAlertTextIsVisibleThenClickOnIt()
-
-//         //click on electron page next button
-//         await newProjectPage.clickNextBtn()
-
-//         //input part name
-//         await newProjectPage.inputPartName()
-
-//         //input descripitin
-//         await newProjectPage.inputPartDescriptoin()
-
-//         //click on Select Catagory Selection
-//         await newProjectPage.clickOnSelectCatagorySection()
-
-//         //clickToSelectCatagory
-//         await newProjectPage.clickToSelectCatagory()
-
-//         //click OnShowOnCustomizeBtn
-//         await newProjectPage.clickOnShowOnCustomizeBtn()
-
-//         //click on the next step button
-//         await newProjectPage.clickOnNextStepBtn()
-//         //Choose Block Chain Mint
-//         await newProjectPage.clickToChooseBlockChainMint("Mumbai Testnet (Polygon)")
-//         //Click on Choose Collection section
-//         await newProjectPage.clickToChooseProjectCollections()
-//         //select collection
-//         await newProjectPage.clickToChooseProjectCollection("1")
-
-//         //input Part Privet Price
-//         await newProjectPage.inputPartPrivetPrice()
-
-//         //input Commarcial Price
-//         await newProjectPage.inputCommarcialPrice()
-//         //click on the confirm checkbox
-//         await newProjectPage.clickOnTheConfirmCheckBox()
-//         //click on the next step button
-//         await newProjectPage.clickOnNextStepBtn()
+import LoginPage from "@pages/Login.page";
+import newProjectPage from "@pages/NewProject.page";
+import metaMaskPage from "@pages/metamask.page";
+import * as data from "@testData/login.cred.json";
 
 
-//         await newProjectPage.clickOnConnectWalletBtn()
-//         //Click On metamask button
-//         // let newOne = null;
-//         await newProjectPage.clickOnMetaMaskBtn()
+test('ID-Parts-3DCase-001 | User |  Validate User Can Successfully Part Wit 3D Case', async ({ page }) => {
 
-//         await wallet.approve()
+        await page.goto("/user/dashboard/cover/add-part", { timeout: 1200000, waitUntil: "domcontentloaded" })
 
-//         await newProjectPage.clickOnContinueButton()
-//         // await page.waitForLoadState("load")
+        const pages = page.context().pages()
+        console.log(pages.length);
+
+        //     await pages[0].close()
+
+        //page configaration here
+        const newProjectPages = new newProjectPage(pages[1])
+        const metaMask = new metaMaskPage(pages[2])
+
+        // await page.pause()
+        await test.step("Unlock MetaMask", async () => {
+                await metaMask.metaMaskUnlockHelper()
+                // await metaMask.inputUnlockPassword()
+                // await metaMask.clickOnUnlockBtn()
+        })
+        await page.bringToFront()
+
+        // await newProjectPages.clickOnApproveBtn()
+        await newProjectPages.clickTakeATourStartBtn()
+        await newProjectPages.clickTakeATourSkipBtn()
+
+        await newProjectPages.clickQuickStartBtn()
+        await newProjectPages.clickOnNewPartBtn()
+        await newProjectPages.clickOn3CCaseBtn()
+        //click search btn
+        await newProjectPages.clickOnPartsSectionSearchBtn()
+
+        //click on parts catagory sectoin
+        await newProjectPages.clickOnPartCatagorySection()
+        //click on catagory public button
+        await newProjectPages.clickOnCatagoryPublicBtn()
+
+        //click on catagory public button
+        await newProjectPages.clickOnPartBtn()
+
+        //click on catagory public button
+        await newProjectPages.clickOnUseBtn()
+
+        //click search btn
+        await newProjectPages.clickOnPartsSectionSearchBtn()
+
+        await newProjectPages.IfAlertTextIsVisibleThenClickOnIt()
+
+        //click on electron page next button
+        await newProjectPages.clickNextBtn()
+
+        //input part name
+        await newProjectPages.inputPartName()
+
+        //input descripitin
+        await newProjectPages.inputPartDescriptoin()
+
+        //click on Select Catagory Selection
+        await newProjectPages.clickOnSelectCatagorySection()
+
+        //clickToSelectCatagory
+        await newProjectPages.clickToSelectCatagory()
+
+        //click OnShowOnCustomizeBtn
+        await newProjectPages.clickOnShowOnCustomizeBtn()
+
+        //click on the next step button
+        await newProjectPages.clickOnNextStepBtn()
+        //Choose Block Chain Mint
+        await newProjectPages.clickToChooseBlockChainMint("Mumbai Testnet (Polygon)")
+        //Click on Choose Collection section
+        await newProjectPages.clickToChooseProjectCollections()
+        //select collection
+        await newProjectPages.clickToChooseProjectCollection("1")
+
+        //input Part Privet Price
+        await newProjectPages.inputPartPrivetPrice()
+
+        //input Commarcial Price
+        await newProjectPages.inputCommarcialPrice()
+        //click on the confirm checkbox
+        await newProjectPages.clickOnTheConfirmCheckBox()
+        //click on the next step button
+        await newProjectPages.clickOnNextStepBtn()
+
+
+        await newProjectPages.clickOnConnectWalletBtn()
+        //Click On metamask button
+        // let newOne = null;
+        await newProjectPages.clickOnMetaMaskBtn()
+
+      
+
+        await newProjectPages.clickOnContinueButton()
+        // await page.waitForLoadState("load")
 
 
 
-//         //Click On Agree Btn
-//         await newProjectPage.clickOnAGreeBtn()
+        //Click On Agree Btn
+        await newProjectPages.clickOnAGreeBtn()
 
-//         // await newProjectPage.clickOnAddNewPartBtn()
+        // await newProjectPages.clickOnAddNewPartBtn()
 
 
 
-// });
+});
 
