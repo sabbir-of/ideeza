@@ -2,7 +2,7 @@
   "name": "Ideeza UI Automation",
   "version": "1.0.0",
   "description": "Ideeza UI Automation",
-  "main": "index.js",
+  "dev": "index.js",
   "scripts": {
     "test": "npx playwright test",
     "allure:generate": "allure generate ./allure-results --clean && allure open ./allure-report",

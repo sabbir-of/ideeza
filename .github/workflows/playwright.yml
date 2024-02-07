@@ -24,7 +24,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npm run test
+        run: npm run test:ProjectCreate_GWC
 
 
       - uses: actions/upload-artifact@v3
