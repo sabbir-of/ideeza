@@ -1,39 +1,51 @@
-import { test as base, chromium } from "@playwright/test";
+import { test as base, chromium, type BrowserContext } from '@playwright/test';
+import metaMaskPage from '@pages/metamask.page';
+const path = require('path');
+const userDirData = path.join(__dirname, '/tests/QuickStart/User-Data-Dir/Chrome/User Data/Default/Extensions/nkbihfbeogaeaoehlefnkodbefgpgknn/10.35.1_0');
+
+export const test = base.extend<{
+  context: BrowserContext;
+  extensionId: string;
+}>({
+  context: async ({ }, use) => {
+    const pathToExtension = path.join(__dirname, '/MyMetamaskExtension');
+    const context = await chromium.launchPersistentContext(userDirData, {
+      headless: false,
+      args: [
+        `--disable-extensions-except=${pathToExtension}`,
+        `--load-extension=${pathToExtension}`,
+      ],
+    });
 
 
-export type ChromeExtensionOptions = {
-  chromeExtensions: {
-    paths: Array<string>;
-    userDataDir?: string;
-  };
-};
 
-export const test = base.extend<ChromeExtensionOptions>({
-  chromeExtensions: [{ paths: [] }, { option: true }],
-  context: [
-    async ({ chromeExtensions }, use) => {
-      const { paths, userDataDir = "C:/Users/sabbir/AppData/Local/Google/Chrome/User Data/Default/Extensions/nkbihfbeogaeaoehlefnkodbefgpgknn/10.34.5_0" } = chromeExtensions;
-      const launchOptions = {
-        headless: false,
-        args:
-          paths.length === 0
-            ? []
-            : [
-              //  `--user-data-dir=${userDataDir}`,
-              `--disable-extensions-except=${paths.join("/MyMetamaskExtension")}`,
-              ...paths.map((path) => `--load-extension=${path}`),
-            ],
-      };
-      const context = await chromium.launchPersistentContext(
-        userDataDir,
-        launchOptions
-      );
-      await use(context);
-      const Page = await context.newPage()
-      // await context.close();
-    },
-    { scope: "test", timeout: 40000 },
-    //                        ^
-    //                        This is my preference. The default 30s timeout is too long to wait if there is a manifest issue.
-  ],
+    await use(context);
+    await context.close();
+
+
+
+  },
+  extensionId: async ({ context }, use) => {
+
+    // for manifest v2:
+    let [background] = context.backgroundPages()
+    if (!background)
+      background = await context.waitForEvent('backgroundpage')
+
+
+    // // for manifest v3:
+    // let [background] = context.serviceWorkers();
+    // if (!background)
+    //   background = await context.waitForEvent('serviceworker');
+
+    const extensionId = background.url().split('/')[2];
+    await use(extensionId);
+
+
+  },
 });
+export const expect = test.expect;
+
+export { chromium };
+
+

@@ -5,8 +5,8 @@ import signUpPage from "@pages/SignUp.page";
 // import { test as baseTest } from "@playwright/test";
 import { BrowserContext, chromium } from "playwright";
 // import { Page } from "tests/fixtures/chrome-extension"
-// import { test as baseTest }  from "../fixtures"
-import { test as base } from "../global-setup"
+// import { test as base }  from "tests/fixtures/chrome-extension"
+import { test as base } from "tests/QuickStart/global-setup"
 import { Page } from "@playwright/test";
 
 
@@ -24,7 +24,7 @@ const test = base.extend<{
     componentPage: componentPage;
     newProjectPage: newProjectPage;
     metaMaskPage: metaMaskPage;
-    metaMaskPage: coll;
+    // metaMaskPage: coll;
 
 
 }>({

@@ -24,7 +24,7 @@ export default class metaMaskPage {
                 newPasswordInputField: `[data-testid="create-password-new"]`,
                 confirmPasswordInputField: `[data-testid="create-password-confirm"]`,
                 createPasswordConfirmCheckBox: `data-testid="create-password-terms"`,
-                createNewWalletBtn: `[role="button"]`,
+                createNewWalletBtn: `[data-testid="create-password-wallet"]`,
                 remindeMeLateBtn: `Remind me later (not recommended)`,
                 skipAccountSecutrityBtn: `[data-testid="skip-srp-backup"]`,
                 gotItBtn: `Got it!`,
@@ -55,6 +55,9 @@ export default class metaMaskPage {
 
 
 
+        async gotToUrl() {
+                await await this.page.goto('chrome-extension://jemiocedphikojcheklknknaehfmoedk/home.html');
+        }
         async approveMetaMask() {
 
                 // const approveSpending = async (page: Page) => {

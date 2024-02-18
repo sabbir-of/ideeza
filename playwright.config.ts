@@ -1,12 +1,11 @@
 import { join } from 'path';
 import type { PlaywrightTestConfig } from '@playwright/test';
-import { ChromeExtensionOptions } from './tests/fixtures/chrome-extension';
 const path = require('path');
-const pathToExtension = path.join(__dirname, '/MyMetamaskExtension');
+const pathToExtension = path.join(__dirname, './tests/fixtures/metamask-chrome-11.10.0');
 const userDataDir = path.join(__dirname, '/tests/QuickStart/User-Data-Dir/Chrome/User Data/Default/Extensions/nkbihfbeogaeaoehlefnkodbefgpgknn/10.35.1_0');
 import ENV from "@utils/env";
 
-const config: PlaywrightTestConfig<ChromeExtensionOptions> = {
+const config: PlaywrightTestConfig = {
   //
   globalSetup: "utils/global-set.ts",
   // globalSetup: require.resolve("/global-setup.ts"),
@@ -36,7 +35,8 @@ const config: PlaywrightTestConfig<ChromeExtensionOptions> = {
     "ID13-BuyProject.test.ts",
     "auth.setup.ts",
 
-    "collection.test.ts"
+    "collection.test.ts",
+    "demo.test.ts"
 
 
   ],
@@ -65,7 +65,7 @@ const config: PlaywrightTestConfig<ChromeExtensionOptions> = {
     open: "never"
   }], ['./My-Reporter.js']],
 
-  globalTeardown: require.resolve("./mailer.ts"),
+  // globalTeardown: require.resolve("./mailer.ts"),
 
   // globalTeardown: require.resolve("./global-setup.ts"),
   // globalSetup: ("global-setup.ts"),
@@ -85,6 +85,8 @@ const config: PlaywrightTestConfig<ChromeExtensionOptions> = {
         // `--disable-extensions-except=${pathToExtension}`,
         // `--load-extension=${pathToExtension}`,
 
+        // `--disable-extensions-except=${pathToExtension}`,
+        // `--load-extension=${pathToExtension}`
       ],
       slowMo: 100
 
@@ -118,9 +120,7 @@ const config: PlaywrightTestConfig<ChromeExtensionOptions> = {
         channel: 'chrome',
         viewport: { width: 1700, height: 920 },
         headless: process.env.CI ? true : false,
-        chromeExtensions: {
-          paths: [join(__dirname, '/MyMetamaskExtension')],
-        },
+
         // ^
         // Provide the paths to one or more extensions. On MacOS, spaces in paths are handled OK.
       },

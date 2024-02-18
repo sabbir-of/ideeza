@@ -34,9 +34,12 @@ jobs:
           path: ./playwright-report
           retention-days: 30
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: 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
-          publish_dir: ./playwright-report
-          publish_branch: gh-pages
+      -   name: Publish Report to GitHub Pages
+          run: |
+            git checkout -B gh-pages
+            cp -r ./playwright-report
+            git add .
+            git commit -m "Update Test Reports"
+            git push origin gh-pages --force
+
+

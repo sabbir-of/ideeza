@@ -3,17 +3,23 @@ import LoginPage from "@pages/Login.page";
 import newProjectPage from "@pages/NewProject.page";
 import metaMaskPage from "@pages/metamask.page";
 import * as data from "@testData/login.cred.json";
+const { Dappwright } = require('@tenkeylabs/dappwright');
 
 const getNumber = Math.floor(Math.random() * 10)
 test.describe('Ideeza Full Project Setup', () => {
 
         test('Projext Setup For All The Test Cases', async ({ page }) => {
-                await page.goto("/")
 
+
+                await page.goto("/")
                 const pages = page.context().pages()
+                // await pages[1].goto("chrome-extension://jemiocedphikojcheklknknaehfmoedk/home.html")
+
                 console.log(pages.length);
                 const loginPage = new LoginPage(pages[1])
                 const metaMask = new metaMaskPage(pages[2])
+                // await metaMask.metaMaskUnlockHelper()
+                // await metaMask.gotToUrl()
 
                 await metaMask.clickTermsAndConditionCheckBox()
                 await metaMask.clickOnCreateWalletBtn()

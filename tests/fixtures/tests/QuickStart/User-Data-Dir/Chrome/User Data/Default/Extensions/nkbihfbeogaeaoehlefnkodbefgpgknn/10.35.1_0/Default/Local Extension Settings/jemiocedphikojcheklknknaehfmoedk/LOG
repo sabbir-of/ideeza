@@ -1,0 +1,29 @@
+2024/02/18-22:59:00.948 3018 Creating DB D:\2024\Ideeza\ideeza\tests\fixtures\tests\QuickStart\User-Data-Dir\Chrome\User Data\Default\Extensions\nkbihfbeogaeaoehlefnkodbefgpgknn\10.35.1_0\Default\Local Extension Settings\jemiocedphikojcheklknknaehfmoedk since it was missing.
+2024/02/18-22:59:00.972 3018 Reusing MANIFEST D:\2024\Ideeza\ideeza\tests\fixtures\tests\QuickStart\User-Data-Dir\Chrome\User Data\Default\Extensions\nkbihfbeogaeaoehlefnkodbefgpgknn\10.35.1_0\Default\Local Extension Settings\jemiocedphikojcheklknknaehfmoedk/MANIFEST-000001
+2024/02/18-22:59:41.694 37cc Level-0 table #5: started
+2024/02/18-22:59:41.753 37cc Level-0 table #5: 2992537 bytes OK
+2024/02/18-22:59:41.758 37cc Delete type=0 #3
+2024/02/18-22:59:51.216 37cc Level-0 table #7: started
+2024/02/18-22:59:51.280 37cc Level-0 table #7: 2984218 bytes OK
+2024/02/18-22:59:51.287 37cc Delete type=0 #4
+2024/02/18-22:59:58.680 37cc Level-0 table #9: started
+2024/02/18-22:59:58.716 37cc Level-0 table #9: 2983807 bytes OK
+2024/02/18-22:59:58.722 37cc Delete type=0 #6
+2024/02/18-23:00:05.780 37cc Level-0 table #11: started
+2024/02/18-23:00:05.826 37cc Level-0 table #11: 2985722 bytes OK
+2024/02/18-23:00:05.832 37cc Delete type=0 #8
+2024/02/18-23:01:01.142 37cc Level-0 table #13: started
+2024/02/18-23:01:01.197 37cc Level-0 table #13: 2985121 bytes OK
+2024/02/18-23:01:01.204 37cc Delete type=0 #10
+2024/02/18-23:02:02.617 37cc Level-0 table #15: started
+2024/02/18-23:02:02.668 37cc Level-0 table #15: 2986455 bytes OK
+2024/02/18-23:02:02.676 37cc Delete type=0 #12
+2024/02/18-23:02:02.677 37cc Compacting 4@0 + 1@1 files
+2024/02/18-23:02:02.737 37cc Generated table #16@0: 1 keys, 994977 bytes
+2024/02/18-23:02:02.737 37cc Compacted 4@0 + 1@1 files => 994977 bytes
+2024/02/18-23:02:02.741 37cc compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/02/18-23:02:02.742 37cc Delete type=2 #7
+2024/02/18-23:02:02.742 37cc Delete type=2 #9
+2024/02/18-23:02:02.742 37cc Delete type=2 #11
+2024/02/18-23:02:02.742 37cc Delete type=2 #13
+2024/02/18-23:02:02.742 37cc Delete type=2 #15
