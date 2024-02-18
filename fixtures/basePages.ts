@@ -24,6 +24,8 @@ const test = base.extend<{
     componentPage: componentPage;
     newProjectPage: newProjectPage;
     metaMaskPage: metaMaskPage;
+    metaMaskPage: coll;
+
 
 }>({
     functions: async ({ page }, use) => {

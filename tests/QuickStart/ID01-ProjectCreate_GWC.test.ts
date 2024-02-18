@@ -3,13 +3,13 @@ import LoginPage from "@pages/Login.page";
 import newProjectPage from "@pages/NewProject.page";
 import metaMaskPage from "@pages/metamask.page";
 import * as data from "@testData/login.cred.json";
-
+import ENV from "@utils/env";
 
 
 test('Add New Project With Give With Community', async ({ page, wallet }) => {
 
 
-        await page.goto("https://frontdev.ideeza.com/", { timeout: 1200000, waitUntil: "domcontentloaded" })
+        await page.goto(ENV.BASE_URL, { timeout: 1200000, waitUntil: "domcontentloaded" })
 
 
         // const pages = page.context().pages()

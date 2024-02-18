@@ -4,7 +4,7 @@ import newProjectPage from "@pages/NewProject.page";
 import metaMaskPage from "@pages/metamask.page";
 import * as data from "@testData/login.cred.json";
 
-
+const getNumber = Math.floor(Math.random() * 10)
 test.describe('Ideeza Full Project Setup', () => {
 
         test('Projext Setup For All The Test Cases', async ({ page }) => {
@@ -158,4 +158,7 @@ test.describe('Ideeza Full Project Setup', () => {
                 await page.waitForLoadState("load")
         });
 
+
+
 })
+

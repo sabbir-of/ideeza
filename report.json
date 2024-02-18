@@ -4,7 +4,7 @@
     "rootDir": "D:/2024/Ideeza/ideeza",
     "forbidOnly": false,
     "fullyParallel": true,
-    "globalSetup": null,
+    "globalSetup": "D:\\2024\\Ideeza\\ideeza\\utils\\global-set.ts",
     "globalTeardown": null,
     "globalTimeout": 0,
     "grep": {},
@@ -56,7 +56,9 @@
           "ID10-Component_3dCase.test.ts",
           "ID11-Component_Electronics.test.ts",
           "ID12-Component_Code.test.ts",
-          "ID13-BuyProject.test.ts"
+          "ID13-BuyProject.test.ts",
+          "auth.setup.ts",
+          "collection.test.ts"
         ],
         "timeout": 300000
       }
@@ -69,14 +71,14 @@
   },
   "suites": [
     {
-      "title": "tests\\QuickStart\\ID01-ProjectCreate_GWC.test.ts",
-      "file": "tests/QuickStart/ID01-ProjectCreate_GWC.test.ts",
+      "title": "tests\\admin\\collection.test.ts",
+      "file": "tests/admin/collection.test.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Add New Project With Give With Community",
-          "ok": false,
+          "title": "Projext Setup For All The Test Cases",
+          "ok": true,
           "tags": [],
           "tests": [
             {
@@ -88,24 +90,9 @@
               "results": [
                 {
                   "workerIndex": 0,
-                  "status": "timedOut",
-                  "duration": 300003,
-                  "error": {
-                    "message": "\u001b[31mTest timeout of 300000ms exceeded.\u001b[39m"
-                  },
-                  "errors": [
-                    {
-                      "message": "\u001b[31mTest timeout of 300000ms exceeded.\u001b[39m"
-                    },
-                    {
-                      "location": {
-                        "file": "D:\\2024\\Ideeza\\ideeza\\pages\\quickStartPages\\NewProject.page.ts",
-                        "column": 31,
-                        "line": 1840
-                      },
-                      "message": "Error: User Dashboard | Quick Start | Add New Project | Project Create With Give To The Comunity CheckOut Button Is Not Visible | Could not find locator:\"TimeoutError: locator.click: Timeout 60000ms exceeded.\nCall log:\n  \u001b[2m- waiting for locator('//div[text()=\\'Checkout\\']')\u001b[22m\n\"\n\n\u001b[90m   at \u001b[39mpages\\quickStartPages\\NewProject.page.ts:1840\n\n\u001b[0m \u001b[90m 1838 |\u001b[39m                         \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m5000\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m 1839 |\u001b[39m                 } \u001b[36mcatch\u001b[39m (error) {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 1840 |\u001b[39m                         \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m`User Dashboard | Quick Start | Add New Project | Project Create With Give To The Comunity CheckOut Button Is Not Visible | Could not find locator:\"${error}\"`\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m      |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 1841 |\u001b[39m                 }\u001b[0m\n\u001b[0m \u001b[90m 1842 |\u001b[39m         }\u001b[0m\n\u001b[0m \u001b[90m 1843 |\u001b[39m\u001b[0m\n\n\u001b[2m    at newProjectPage.clickOnCheckOutBtn (D:\\2024\\Ideeza\\ideeza\\pages\\quickStartPages\\NewProject.page.ts:1840:31)\u001b[22m\n\u001b[2m    at D:\\2024\\Ideeza\\ideeza\\tests\\QuickStart\\ID01-ProjectCreate_GWC.test.ts:175:9\u001b[22m"
-                    }
-                  ],
+                  "status": "passed",
+                  "duration": 73752,
+                  "errors": [],
                   "stdout": [
                     {
                       "text": "\n"
@@ -117,47 +104,47 @@
                       "text": "\n"
                     },
                     {
-                      "text": "Downloading extension...\n"
+                      "text": "\u001b[33m4\u001b[39m\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-02-07T16:46:00.607Z",
+                  "startTime": "2024-02-14T11:51:23.357Z",
                   "attachments": [
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "D:\\2024\\Ideeza\\ideeza\\test-results\\tests-QuickStart-ID01-ProjectCreate_GWC-Add-New-Project-With-Give-With-Community\\test-failed-3.png"
+                      "path": "D:\\2024\\Ideeza\\ideeza\\test-results\\tests-admin-collection-Projext-Setup-For-All-The-Test-Cases\\test-finished-1.png"
                     },
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "D:\\2024\\Ideeza\\ideeza\\test-results\\tests-QuickStart-ID01-ProjectCreate_GWC-Add-New-Project-With-Give-With-Community\\test-failed-1.png"
+                      "path": "D:\\2024\\Ideeza\\ideeza\\test-results\\tests-admin-collection-Projext-Setup-For-All-The-Test-Cases\\test-finished-2.png"
                     },
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "D:\\2024\\Ideeza\\ideeza\\test-results\\tests-QuickStart-ID01-ProjectCreate_GWC-Add-New-Project-With-Give-With-Community\\test-failed-2.png"
+                      "path": "D:\\2024\\Ideeza\\ideeza\\test-results\\tests-admin-collection-Projext-Setup-For-All-The-Test-Cases\\test-finished-3.png"
                     },
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "D:\\2024\\Ideeza\\ideeza\\test-results\\tests-QuickStart-ID01-ProjectCreate_GWC-Add-New-Project-With-Give-With-Community\\test-failed-4.png"
+                      "path": "D:\\2024\\Ideeza\\ideeza\\test-results\\tests-admin-collection-Projext-Setup-For-All-The-Test-Cases\\test-finished-4.png"
                     },
                     {
                       "name": "trace",
                       "contentType": "application/zip",
-                      "path": "D:\\2024\\Ideeza\\ideeza\\test-results\\tests-QuickStart-ID01-ProjectCreate_GWC-Add-New-Project-With-Give-With-Community\\trace.zip"
+                      "path": "D:\\2024\\Ideeza\\ideeza\\test-results\\tests-admin-collection-Projext-Setup-For-All-The-Test-Cases\\trace.zip"
                     }
                   ]
                 }
               ],
-              "status": "unexpected"
+              "status": "expected"
             }
           ],
-          "id": "4535cab0bbbff7ee2d9b-216ccde6e36167754292",
-          "file": "tests/QuickStart/ID01-ProjectCreate_GWC.test.ts",
-          "line": 9,
+          "id": "1f2a7675bf01a6b6abd5-e25fc4b65a56beef3eaf",
+          "file": "tests/admin/collection.test.ts",
+          "line": 13,
           "column": 5
         }
       ]
@@ -165,11 +152,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-02-07T16:45:56.513Z",
-    "duration": 530734.413,
-    "expected": 0,
+    "startTime": "2024-02-14T11:51:20.079Z",
+    "duration": 77982.34599999999,
+    "expected": 1,
     "skipped": 0,
-    "unexpected": 1,
+    "unexpected": 0,
     "flaky": 0
   }
 }

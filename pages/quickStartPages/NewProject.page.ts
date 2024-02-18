@@ -20,6 +20,7 @@ export default class newProjectPage {
         private newProjectPageElements = {
                 quickStartBtn: "//div[text()='Quick Start']",
                 newPartBtn: "//p[text()='New Part']",
+                newComponentBtn: "//p[text()='New Component']",
                 threeDCaseBtn: "//p[text()='3D case']",
                 newProjectBtn: "//p[text()='New Project']",
                 projectCreateByYourselfBtn: `(//div[text()='Click here to design new project by yourself!'])[3]`,
@@ -997,6 +998,17 @@ export default class newProjectPage {
                 }
         }
 
+        async clickOnNewComponentBtn() {
+                const ele = await this.page.locator(this.newProjectPageElements.newComponentBtn)
+                try {
+                        await ele.click({ button: "left", force: true })
+                        await this.page.waitForTimeout(2000)
+
+                } catch (error) {
+                        throw new Error(`User Dashboard | Quick Start | New Component Button Is Not Visible | Could not find locator:"${error}"`)
+                }
+        }
+
         async clickOn3CCaseBtn() {
                 const ele = await this.page.locator(this.newProjectPageElements.threeDCaseBtn).nth(0)
                 try {
@@ -1061,6 +1073,18 @@ export default class newProjectPage {
                         await ele.click({ button: "left", force: true })
                 } catch (error) {
                         throw new Error(`User Dashboard | Quick Start | Add New Project Modal Add New Project Yourselft Button Is Not Visible | Could not find locator:"${error}"`)
+                }
+        }
+
+        async clickOnNewComponentElectronicsSearchBtn() {
+                const ele = await this.page.locator(this.newProjectPageElements.addPartsOrComponentSearchIcon).nth(0)
+                try {
+                        await ele.click({ button: 'left', delay: 100 })
+                        await this.page.waitForLoadState(
+                                "networkidle"
+                        )
+                } catch (error) {
+                        throw new Error(`User Dashboard | Quick Start | New Component | Electronics |  Add Parts or Component Search Button Is Not Visible | Could not find locator:"${error}"`)
                 }
         }
 

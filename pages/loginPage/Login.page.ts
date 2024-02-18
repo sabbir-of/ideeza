@@ -18,6 +18,7 @@ export default class LoginPage {
         plusbutton: "(//button[contains(@class,'MuiButtonBase-root MuiIconButton-root')])[1]",
         inputConfigrationsName: "//input[@type='string']",
         logoutBtn: "//p[text()='Logout']",
+        dashboardBtn: "//li[@title='Dashboard']",
         loginBtn: "(//p[@value='Log in'])[2]",
         signInPageTitleText: "//p[text()='Sign in and start managing your Games!']",
         usernameInputField: "input[type='text']",
@@ -32,7 +33,7 @@ export default class LoginPage {
         idLabel: "//label[text()='Id']",
         secretLabel: "//label[text()='Secret']",
         eyeBtn: "//button[contains(@class,'MuiButtonBase-root MuiIconButton-root')]",
-        cookieCheckBox: "//input[@type='checkbox']",
+        cookieCheckBox: `[type="checkbox"]`,
         approveBtn: "//div[text()='Approve']",
         wallateBtn: "(//div[contains(@class,'MuiAvatar-root MuiAvatar-circular')]//img)[1]",
         homeLogo: "(//img[@alt='ideeza'])[3]",
@@ -154,6 +155,14 @@ export default class LoginPage {
             throw new Error(`Home | Menu Bar | Logout Button Text Is Not Match | Could not find locator:"${error}"`)
         }
     }
+    async clickOnDashboardBtns() {
+        const ele = await this.page.locator(this.loginPageElements.dashboardBtn)
+        try {
+            await ele.click()
+        } catch (error) {
+            throw new Error(`Home | Menu Bar | Logout Button Text Is Not Match | Could not find locator:"${error}"`)
+        }
+    }
 
     async inputUserName(username: string) {
         const ele = this.page.locator(this.loginPageElements.usernameInputField)
@@ -219,7 +228,7 @@ export default class LoginPage {
 
 
     async clickOnCookiesCheckBox() {
-        const ele = await this.page.locator(this.loginPageElements.cookieCheckBox)
+        const ele = await this.page.locator(this.loginPageElements.cookieCheckBox).nth(0)
         try {
 
             await ele.click({ button: "left", delay: 100 })
@@ -233,7 +242,7 @@ export default class LoginPage {
         const ele = await this.page.locator(this.loginPageElements.approveBtn)
         try {
             // if (await ele.isVisible()) {
-                await ele.click({ button: "left", delay: 100 })
+            await ele.click({ button: "left", delay: 100 })
             // }
         } catch (error) {
             throw new Error(`Home Sceen | Cookies Approve Is Not Visible | Could not find locator:"${error}"`)
@@ -330,6 +339,7 @@ export default class LoginPage {
         await this.enterLoginPassword(password);
         await this.clickLoginBtn();
         await this.page.waitForTimeout(4000)
+        await this.page.waitForLoadState("networkidle")
         // await this.page.waitForSelector(this.loginPageElements.userName)
     }
     async loginNegative(invalidusername: string, invalidpassword: string) {
