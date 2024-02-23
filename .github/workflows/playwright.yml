@@ -39,7 +39,7 @@ jobs:
         uses: actions/deploy-pages@v1
         with:
               id-token: write
-              GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+              GITHUB_TOKEN: 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
               BRANCH: gh-pages  # The branch the action should deploy to
               FOLDER: ./playwright-report     # The folder the action should deploy
               CLEAN: true       # Automatically remove deleted files from the deployment branch
