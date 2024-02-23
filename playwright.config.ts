@@ -102,7 +102,7 @@ const config: PlaywrightTestConfig = {
 
     // storageState: "./auth.json",
     // actionTimeout: 2 * 60 * 1000,
-    trace: process.env.CI ? "off" : "on",
+    trace: process.env.CI ? "off" : "retain-on-failure",
     video: process.env.CI ? "off" : "off",
     screenshot: process.env.CI ? "off" : "on",
   },

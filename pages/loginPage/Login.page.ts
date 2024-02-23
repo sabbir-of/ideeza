@@ -19,7 +19,7 @@ export default class LoginPage {
         inputConfigrationsName: "//input[@type='string']",
         logoutBtn: "//p[text()='Logout']",
         dashboardBtn: "//li[@title='Dashboard']",
-        loginBtn: "(//p[@value='Log in'])[2]",
+        loginBtn: "(//p[@value='Log in'])[28]",
         signInPageTitleText: "//p[text()='Sign in and start managing your Games!']",
         usernameInputField: "input[type='text']",
         passwordInputField: "input[type='password']",
