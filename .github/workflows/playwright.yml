@@ -34,12 +34,12 @@ jobs:
           path: ./playwright-report
           retention-days: 30
 
-      -   name: Publish Report to GitHub Pages
-          run: |
-            git checkout -B gh-pages
-            cp -r ./playwright-report
-            git add .
-            git commit -m "Update Test Reports"
-            git push origin gh-pages --force
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            BRANCH: gh-pages  # The branch the action should deploy to
+            FOLDER: build     # The folder the action should deploy
+            CLEAN: true       # Automatically remove deleted files from the deployment branch
 
 
